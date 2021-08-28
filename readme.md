@@ -1,5 +1,5 @@
 ## About
-This is a repo to showcase Thomas Alex's achievements and portfolio
+This is a website to showcase Thomas Alex's achievements, portfolio and blogs
 
 For now my skills include:
 1. Python
