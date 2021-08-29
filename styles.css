@@ -70,7 +70,7 @@ hr {
 
 .link-secondary-btn {
     display: block;
-    margin-left: 20rem;
+    text-align: right;
     text-align: center;
     text-decoration: none;
     border: 2px solid var(--dark-grey-color);
@@ -82,6 +82,11 @@ hr {
 .remove-hyperlink-formatting {
     text-decoration: none;
     color: var(--white-color)
+}
+
+.link-pad {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
 }
 
 
