@@ -6,10 +6,11 @@
 :root {
     --primary-color: #059669;
     --white-color: white;
-    --dark-grey-color: #D1D5DB;
+    --ice-blue-color: #D6DFEB;
     --light-green-color: #DCEBE4;
     --cream-color: #FEF3C7;
-    --emerald-green: #34D399
+    --emerald-green: #34D399;
+    --dark-grey-color: #374151;
 }
 
 
@@ -17,6 +18,7 @@
 body {
     font-family: 'Ubuntu',
         sans-serif;
+    margin: 0px;
 
 }
 
@@ -42,34 +44,39 @@ hr {
 
 /* Container Formatting */
 .containers {
-    padding-left: 5rem;
-    padding-right: 5rem;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+    padding-bottom: 1.5rem;
+    max-width: 600px;
     margin: auto;
 }
 
 .fluid-containers {
     padding-left: 2rem;
     padding-right: 2rem;
-    max-width: 600px;
 }
 
 
 /* Links-Button Formatting */
 .link-primary-btn {
+    display: block;
+    margin-top: 2rem;
     text-decoration: none;
-    background-color: var(--primary-color);
+    background-color: var(--dark-grey-color);
     border-radius: 0.5rem;
     padding: 0.5rem 1.5rem;
     color: var(--white-color);
 }
 
 .link-secondary-btn {
+    display: block;
+    margin-left: 20rem;
+    text-align: center;
     text-decoration: none;
-    background-color: var(--white-color);
-    border: 1px solid var(--primary-color);
-    border-radius: 0.5rem;
+    border: 2px solid var(--dark-grey-color);
+    border-radius: 0.25rem;
     padding: 0.5rem 1.5rem;
-    color: var(--primary-color)
+    color: var(--dark-grey-color);
 }
 
 .remove-hyperlink-formatting {
@@ -97,17 +104,22 @@ hr {
     padding-inline-start: 0px;
 }
 
+.list-padding {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
 
 /* Navigation Bar Formatting */
 .navigation {
-    background-color: var(--primary-color);
+    background-color: var(--dark-grey-color);
     padding: 2rem 1.5rem;
     border-bottom-right-radius: 1rem;
 }
 
 .nav-brand {
     font-weight: bold;
-    font-size: 1.35rem;
+    font-size: 2.25rem;
     color: var(--white-color);
 }
 
@@ -118,12 +130,13 @@ hr {
 }
 
 .navigation .link-active {
-    font-weight: bold;
+    font-weight: bolder;
 }
 
 /* Header Formatting */
 .hero {
-    padding: 2rem 2rem
+    padding-top: 2rem;
+    padding-bottom: 0rem;
 }
 
 .hero .hero-img {
@@ -146,7 +159,6 @@ hr {
 
 /* Section Formatting */
 section {
-    text-align: center;
     margin: 2rem;
     padding: 0.5rem 1rem;
 }
@@ -154,23 +166,20 @@ section {
 
 /* Section Backgrounds */
 .off-white-bg {
-    background-color: var(--dark-grey-color);
+    background-color: var(--ice-blue-color);
     border-radius: 0.5rem;
-    max-width: 800px;
     margin: 2rem auto;
 }
 
 .light-green-bg {
     background-color: var(--light-green-color);
     border-radius: 0.5rem;
-    max-width: 800px;
     margin: 2rem auto;
 }
 
 .cream-bg {
     background-color: var(--cream-color);
     border-radius: 0.5rem;
-    max-width: 800px;
     margin: 2rem auto;
 }
 
@@ -181,7 +190,7 @@ section {
 }
 
 .footer-box {
-    background-color: var(--primary-color);
+    background-color: var(--dark-grey-color);
     border-radius: 0.5rem 0rem 0.5rem 0rem;
     color: var(--white-color);
     padding: 0.5rem 1rem;
@@ -189,7 +198,7 @@ section {
 }
 
 .footer-note {
-    color: var(--dark-grey-color);
+    color: var(--ice-blue-color);
     text-align: center;
     font-size: smaller;
 }
