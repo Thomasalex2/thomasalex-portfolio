@@ -69,6 +69,8 @@ hr {
 }
 
 .link-secondary-btn {
+    transition: 0.1s;
+    color: var(--dark-grey-color);
     display: block;
     text-align: right;
     text-align: center;
@@ -76,7 +78,12 @@ hr {
     border: 2px solid var(--dark-grey-color);
     border-radius: 0.25rem;
     padding: 0.5rem 1.5rem;
-    color: var(--dark-grey-color);
+}
+
+.link-secondary-btn:hover {
+    transition: 0.1s;
+    color: var(--white-color);
+    background-color: var(--dark-grey-color);
 }
 
 .remove-hyperlink-formatting {
@@ -227,7 +234,6 @@ a:active {
 } */
 
 .button-animation {
-    padding: 10px;
     transition: all 0.5s;
     cursor: pointer;
     margin: 5px;
@@ -237,7 +243,7 @@ a:active {
     cursor: pointer;
     display: inline-block;
     position: relative;
-    transition: 0.5s;
+    transition: 0.4s;
 }
 
 .button-animation span:after {
