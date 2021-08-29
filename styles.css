@@ -142,6 +142,7 @@ hr {
 
 .navigation .link-active {
     font-weight: bolder;
+    text-shadow: 1px 1px #999;
 }
 
 /* Header Formatting */
@@ -224,3 +225,51 @@ a:hover,
 a:active {
     color: inherit;
 } */
+
+.button-animation {
+    padding: 10px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.button-animation span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.button-animation span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+.button-animation:hover span {
+    padding-right: 25px;
+}
+
+.button-animation:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+
+.hvr-grow {
+    display: inline-block;
+    transform: translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    backface-visibility: hidden;
+    -moz-osx-font-smoothing: grayscale;
+    transition-duration: 0.3s;
+    transition-property: transform;
+}
+
+.hvr-grow:hover,
+.hvr-grow:focus,
+.hvr-grow:active {
+    transform: scale(1.1);
+}
