@@ -18,7 +18,7 @@
 body {
     font-family: 'Ubuntu',
         sans-serif;
-    margin: 0px;
+    margin: 20px;
 
 }
 
@@ -114,9 +114,15 @@ hr {
     padding-bottom: 0.5rem;
 }
 
+.list-no-indent {
+    list-style: none;
+    padding-left: 0.5rem;
+}
+
 
 /* Navigation Bar Formatting */
 .navigation {
+    margin: -20px;
     background-color: var(--dark-grey-color);
     padding: 2rem 1.5rem;
     border-bottom-right-radius: 1rem;
@@ -195,6 +201,7 @@ section {
 }
 
 .footer-box {
+    margin: -20px;
     background-color: var(--dark-grey-color);
     border-radius: 0.5rem 0rem 0.5rem 0rem;
     color: var(--white-color);
