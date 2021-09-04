@@ -52,8 +52,8 @@ hr {
 }
 
 .containers-1000 {
-    padding-left: 2.5rem;
-    padding-right: 2.5rem;
+    /* padding-left: 2.5rem; */
+    /* padding-right: 2.5rem; */
     padding-bottom: 1.5rem;
     max-width: 1000px;
     margin: auto;
@@ -70,7 +70,7 @@ hr {
 .link-primary-btn {
     text-decoration: none;
     display:inline-block;
-    margin: 0rem 0.5rem;
+    margin: 0.5rem 0.5rem;
     max-width: 7rem;
     text-align: center;
     background-color: var(--dark-grey-color);
@@ -89,7 +89,7 @@ hr {
 .link-secondary-btn {
     text-decoration: none;
     display: inline-block;
-    margin: 0rem 0.5rem;
+    margin: 0.5rem 0.5rem;
     max-width: 7rem;
     color: var(--dark-grey-color);
     text-align: center;
