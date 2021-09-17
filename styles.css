@@ -254,6 +254,17 @@ section {
     margin: 2rem auto;
 }
 
+.about img {
+    float: right;
+    margin: 20px;
+    width: 300px;
+}
+
+.about p {
+    font-size: 1.15rem;
+    padding: 5px;
+    line-height: 2.75vh;
+}
 
 /* Footer Formatting */
 .footer-heading {
