@@ -254,10 +254,23 @@ section {
     margin: 2rem auto;
 }
 
+@media screen and (max-width: 700px) {
+    .about img {
+        float: top;
+        text-align: center;
+        display: block;
+        margin-left: 30px;
+    }
+}
+
+@media screen and (min-width: 700px) {
+    .about img {
+        float: right;
+        margin: 20px;
+    }
+}
+
 .about img {
-    float: right;
-    margin: 20px;
-    margin-top: 40px;
     width: 300px;
 }
 
@@ -266,6 +279,7 @@ section {
     padding: 5px;
     line-height: 2.75vh;
 }
+
 
 /* Footer Formatting */
 .footer-heading {
