@@ -257,6 +257,7 @@ section {
 .about img {
     float: right;
     margin: 20px;
+    margin-top: 40px;
     width: 300px;
 }
 
