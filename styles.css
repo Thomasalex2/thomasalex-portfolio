@@ -77,7 +77,7 @@ hr {
     text-decoration: none;
     display:inline-block;
     margin: 0.5rem 0.5rem;
-    max-width: 7rem;
+    max-width: 10rem;
     text-align: center;
     background-color: var(--dark-grey-color);
     border: 2px solid var(--dark-grey-color);
@@ -96,7 +96,7 @@ hr {
     text-decoration: none;
     display: inline-block;
     margin: 0.5rem 0.5rem;
-    max-width: 7rem;
+    max-width: 10rem;
     color: var(--dark-grey-color);
     text-align: center;
     border: 2px solid var(--dark-grey-color);
@@ -280,6 +280,10 @@ section {
     line-height: 3.45vh;
 }
 
+.blog-preview {
+    text-align: justify;
+    line-height: 3vh;
+}
 
 /* Footer Formatting */
 .footer-heading {
