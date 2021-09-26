@@ -161,6 +161,8 @@ hr {
 .list-padding {
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
+    line-height: 2.5vh;
+
 }
 
 .list-no-indent {
@@ -259,7 +261,7 @@ section {
         float: top;
         text-align: center;
         display: block;
-        margin-left: 30px;
+        margin:auto;
     }
 }
 
@@ -290,6 +292,16 @@ section {
     margin-top: 20px;
     font-size: 1.1rem;
 }
+
+.work-title {
+    margin-bottom:5px;
+    padding-bottom: 0rem;
+}
+
+.duration {
+    margin-top: 5px;
+}
+
 
 .footer-box {
     margin: -20px;
