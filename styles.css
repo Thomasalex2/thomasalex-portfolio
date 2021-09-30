@@ -282,6 +282,10 @@ section {
     line-height: 3.45vh;
 }
 
+p {
+    line-height: 3vh;
+}
+
 .blog-preview {
     text-align: justify;
     line-height: 3vh;
