@@ -306,26 +306,38 @@ p {
     margin-top: 5px;
 }
 
-@media screen and (min-width: 700px) {
-
-    .robotics-images {
-        text-align: center;
-        margin: auto;
-        display: inline;
-        max-width: 45%;
-        padding: 0.5rem;
-    }
+.robotics-class {
+    display:flex;
+    justify-content: center;
+    align-items: baseline;
 }
 
 @media screen and (max-width: 700px) {
-
-    .robotics-images {
-        margin:auto;
-        text-align: center;
-        display: block;
-        max-width: 85%;
-        padding: 0.5rem;
+    .robotics-class {
+        flex-flow: column;
     }
+}
+
+@media screen and (min-width: 701px) {
+    .robotics-class {
+        flex-flow: row;
+    }
+}
+
+.image-with-caption {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.robotics-images {
+    width: 85%;
+    height: auto;
+}
+
+.image-caption {
+    text-align: center;
+    font-size: 0.9rem;
 }
 
 
