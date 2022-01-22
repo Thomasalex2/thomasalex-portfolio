@@ -173,14 +173,26 @@ hr {
 
 /* Navigation Bar Formatting */
 .navigation {
-    position: sticky;
-    top:-60px;
     margin: -20px;
     background-color: var(--dark-grey-color);
     padding: 10px 15px;
     padding-bottom: 0px;
     /* border-bottom-right-radius: 20px; */
 }
+
+@media screen and (max-width: 490px) {
+    .navigation{
+        position: static;
+    }
+}
+
+@media screen and (min-width: 490px) {
+    .navigation {
+        position: sticky;
+        top: -60px;
+    }
+}
+
 
 .nav-brand {
     font-weight: bold;
