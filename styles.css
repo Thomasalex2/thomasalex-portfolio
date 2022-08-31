@@ -342,6 +342,10 @@ p {
     align-items: baseline;
 }
 
+.profile-pic {
+    border-radius: 999px;
+}
+
 @media screen and (max-width: 700px) {
     .robotics-class {
         flex-flow: column;
