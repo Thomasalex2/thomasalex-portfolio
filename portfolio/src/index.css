@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  @apply bg-charcoal text-white font-body antialiased;
+}
+
+.container-custom {
+  @apply max-w-6xl mx-auto px-4;
+}
+
+.section {
+  @apply py-16 md:py-24;
+}
+
+.btn {
+  @apply inline-flex items-center justify-center gap-2 rounded-md px-5 py-3 font-medium transition-colors duration-200;
+}
+
+.btn-primary {
+  @apply bg-forest hover:bg-forest-light text-white;
+}
+
+.btn-secondary {
+  @apply border border-white/20 hover:border-forest-light text-white/90 hover:text-white;
+}
+
+.card {
+  @apply bg-white/5 border border-white/10 rounded-xl backdrop-blur-sm;
+}
+
+.glow-border {
+  box-shadow: 0 0 0 4px rgba(25, 133, 95, 0.25);
+}
+
+
