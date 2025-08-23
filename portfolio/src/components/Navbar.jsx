@@ -1,19 +1,53 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { HiMenu, HiX } from 'react-icons/hi'
 import { nav } from '../data/content.js'
 
 const Navbar = () => {
   const [open, setOpen] = useState(false)
+  const [focusedIndex, setFocusedIndex] = useState(-1)
 
-  const links = nav.map((item) => (
+  // Keyboard navigation
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') {
+        setOpen(false)
+        setFocusedIndex(-1)
+      }
+      
+      if (e.key === 'Enter' && focusedIndex >= 0) {
+        const link = nav[focusedIndex]
+        if (link.external) {
+          window.open(link.href, '_blank', 'noopener,noreferrer')
+        } else {
+          document.querySelector(link.href)?.scrollIntoView({ behavior: 'smooth' })
+        }
+        setOpen(false)
+        setFocusedIndex(-1)
+      }
+    }
+
+    if (open) {
+      document.addEventListener('keydown', handleKeyDown)
+      return () => document.removeEventListener('keydown', handleKeyDown)
+    }
+  }, [open, focusedIndex])
+
+  const links = nav.map((item, index) => (
     <a
       key={item.label}
       href={item.href}
       target={item.external ? '_blank' : undefined}
       rel={item.external ? 'noreferrer noopener' : undefined}
-      className="px-3 py-2 text-sm md:text-base text-white/90 hover:text-white hover:bg-white/5 rounded-md transition-colors"
+      className={`px-3 py-2 text-sm md:text-base text-white/90 hover:text-white hover:bg-white/5 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-forest focus:ring-offset-2 focus:ring-offset-charcoal ${
+        focusedIndex === index ? 'bg-forest/20 text-forest-light' : ''
+      }`}
       onClick={() => setOpen(false)}
+      onFocus={() => setFocusedIndex(index)}
+      onBlur={() => setFocusedIndex(-1)}
+      tabIndex={open ? 0 : -1}
+      role="menuitem"
+      aria-label={item.label}
     >
       {item.label}
     </a>

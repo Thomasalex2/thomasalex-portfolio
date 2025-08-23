@@ -73,6 +73,7 @@ export const experience = [
     company: 'Galenband',
     period: 'Since November 2023',
     location: 'Galway, Ireland',
+    logo: '/images/company-logos/galenband.png', // Placeholder - you can add actual logos
     points: [
       'Designing and prototyping a Class II FDA medical device for atrial fibrillation (Afib) detection using ECG signals from the upper arm, focusing on long battery life and minimal user interaction',
       'Contributed to product ideation and feature selection, helping shape the roadmap for a wearable ECG monitor',
@@ -87,6 +88,7 @@ export const experience = [
     company: 'TIF Labs',
     period: 'January 2020 – May 2023',
     location: 'Bangalore, India',
+    logo: '/images/company-logos/tif-labs.png', // Placeholder - you can add actual logos
     points: [
       'Designed and developed 20+ microcontroller PCBs, sensor boards, breakouts, and full-fledged products',
       'Python developer - CLI-based helper tools, inferencing bots, tester applications and RPA - based automation bots for hospitals',
@@ -106,6 +108,9 @@ export const projects = [
       'Detect and recording gait using embedded MCUs and low-cost sensors',
     link: 'https://drive.google.com/file/d/1-hqiUdAPf2JjiMbJSEEIyfQJKgtzE2dh/view?usp=sharing',
     image: '/images/gait.png',
+    techStack: ['Embedded C', 'Arduino', 'Sensors', 'Data Analysis', 'Python'],
+    category: 'Hardware & Data Analysis',
+    difficulty: 'Advanced'
   },
   {
     title: 'TV Show Renamer',
@@ -113,6 +118,9 @@ export const projects = [
       'Desktop app written in python to automatically batch rename all your favorite TV shows with their episode name fetched from Wikipedia',
     link: 'https://github.com/Thomasalex2/tv-show-renamer',
     image: '/images/show_renamer.png',
+    techStack: ['Python', 'PyQt', 'Web Scraping', 'File Management', 'GUI Design'],
+    category: 'Software',
+    difficulty: 'Intermediate'
   },
   {
     title: 'ESP32-S3 Breakout Board',
@@ -120,6 +128,9 @@ export const projects = [
       'Custom ESP32-S3 breakout with power management and robust USB boot circuitry for rapid prototyping.',
     link: '_blank',
     image: '/images/esp32.png',
+    techStack: ['PCB Design', 'ESP32-S3', 'USB-C', 'BOM', 'KiCad'],
+    category: 'Hardware & PCB Design',
+    difficulty: 'Intermediate'
   }
 ]
 

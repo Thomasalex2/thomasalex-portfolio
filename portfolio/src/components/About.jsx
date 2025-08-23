@@ -1,6 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { about } from '../data/content.js'
+import LazyImage from './LazyImage.jsx'
 
 const About = () => {
   return (
@@ -14,7 +15,7 @@ const About = () => {
           className="flex justify-center"
         >
           <div className="relative">
-            <img
+            <LazyImage
               src={about.image}
               alt="Profile"
               className="w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 rounded-full object-cover border-2 border-forest glow-border"

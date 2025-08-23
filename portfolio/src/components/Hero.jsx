@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { site, hero as heroContent } from '../data/content.js'
 
@@ -8,6 +8,46 @@ const fadeUp = {
 }
 
 const Hero = () => {
+  const [displayText, setDisplayText] = useState('')
+  const [currentIndex, setCurrentIndex] = useState(0)
+  const [isDeleting, setIsDeleting] = useState(false)
+  
+  const roles = [
+    'Embedded Systems Engineer',
+    'Hardware Designer',
+    'IoT Developer',
+    'Firmware Developer',
+    'PCB Designer'
+  ]
+
+  useEffect(() => {
+    const currentRole = roles[currentIndex]
+    
+    if (isDeleting) {
+      if (displayText.length > 0) {
+        const timeout = setTimeout(() => {
+          setDisplayText(displayText.slice(0, -1))
+        }, 50) // Reduced from 100ms to 50ms for faster deletion
+        return () => clearTimeout(timeout)
+      } else {
+        setIsDeleting(false)
+        setCurrentIndex((prev) => (prev + 1) % roles.length)
+      }
+    } else {
+      if (displayText.length < currentRole.length) {
+        const timeout = setTimeout(() => {
+          setDisplayText(currentRole.slice(0, displayText.length + 1))
+        }, 50) // Reduced from 150ms to 75ms for faster typing
+        return () => clearTimeout(timeout)
+      } else {
+        const timeout = setTimeout(() => {
+          setIsDeleting(true)
+        }, 1000) // Reduced from 2000ms to 1000ms for faster pause between words
+        return () => clearTimeout(timeout)
+      }
+    }
+  }, [displayText, currentIndex, isDeleting, roles])
+
   return (
     <section id="top" className="section">
       <div className="container-custom grid md:grid-cols-2 gap-10 items-center">
@@ -18,12 +58,13 @@ const Hero = () => {
           >
             {site.name}
           </motion.h1>
-          <motion.p
-            className="mt-4 text-forest-light font-semibold text-lg"
+          <motion.div
+            className="mt-4 text-forest-light font-semibold text-lg min-h-[1.5rem]"
             initial="hidden" animate="visible" variants={fadeUp} custom={2}
           >
-            {site.role}
-          </motion.p>
+            <span>{displayText}</span>
+            <span className="animate-pulse">|</span>
+          </motion.div>
           <motion.p
             className="mt-4 text-white/80 max-w-prose"
             initial="hidden" animate="visible" variants={fadeUp} custom={3}
