@@ -17,6 +17,13 @@ export const hero = {
   ctaPrimary: { label: 'View My Work', href: '#experience' },
   ctaSecondary: { label: 'View CV', href: site.resumeUrl },
   image: '/images/hero.jpg',
+  roles: [
+    'Embedded Systems Engineer',
+    'Hardware Designer',
+    'IoT Developer',
+    'Python Developer',
+    'PCB Designer'
+  ],
 }
 
 export const about = {
@@ -108,7 +115,7 @@ export const projects = [
       'Detect and recording gait using embedded MCUs and low-cost sensors',
     link: 'https://drive.google.com/file/d/1-hqiUdAPf2JjiMbJSEEIyfQJKgtzE2dh/view?usp=sharing',
     image: '/images/gait.png',
-    techStack: ['Embedded C', 'Arduino', 'Sensors', 'Data Analysis', 'Python'],
+    techStack: ['C++', 'Arduino', 'Sensors', 'Data Analysis', 'Python'],
     category: 'Hardware & Data Analysis',
     difficulty: 'Advanced'
   },
@@ -128,7 +135,7 @@ export const projects = [
       'Custom ESP32-S3 breakout with power management and robust USB boot circuitry for rapid prototyping.',
     link: '_blank',
     image: '/images/esp32.png',
-    techStack: ['PCB Design', 'ESP32-S3', 'USB-C', 'BOM', 'KiCad'],
+    techStack: ['PCB Design', 'ESP32-S3', 'Power Management', 'USB-C', 'BOM', 'KiCad'],
     category: 'Hardware & PCB Design',
     difficulty: 'Intermediate'
   }
@@ -138,6 +145,7 @@ export const projects = [
 
 export const contact = {
   email: 'thomasalexk@outlook.com',
+  message: 'Do you have a product idea or a prototype and need a hardware engineer to help design it? Feel free to reach out and I will get back to you within 24 hours!',
   social: {
     github: 'https://github.com/ThomasAlex2',
     linkedin: 'https://linkedin.com/in/thomas-alex-one',

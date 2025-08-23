@@ -12,13 +12,7 @@ const Hero = () => {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isDeleting, setIsDeleting] = useState(false)
   
-  const roles = [
-    'Embedded Systems Engineer',
-    'Hardware Designer',
-    'IoT Developer',
-    'Firmware Developer',
-    'PCB Designer'
-  ]
+  const roles = heroContent.roles
 
   useEffect(() => {
     const currentRole = roles[currentIndex]

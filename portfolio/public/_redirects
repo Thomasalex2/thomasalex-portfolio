@@ -1,0 +1,6 @@
+# SPA fallback - this ensures that all routes fall back to index.html
+/*    /index.html   200
+
+# Force HTTPS (backup to netlify.toml)
+http://:domain/*  https://:domain/:splat  301!
+
