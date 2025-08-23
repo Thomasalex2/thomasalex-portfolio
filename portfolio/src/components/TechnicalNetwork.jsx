@@ -6,18 +6,18 @@ const TechnicalNetwork = ({
   animationSpeed = 0.5,
   driftSpeed = 0.2,
   
-  // Visual settings
-  dotCount = 200,
-  lineCount = 400,
+  // Visual settings (will be scaled based on screen size)
+  baseDotCount = 200,
+  baseLineCount = 400,
   dotSize = 2,
   lineWidth = 1,
   dotColor = '#4B5563', // gray-600
   lineColor = '#D1D5DB', // gray-300
   
-  // Network settings
-  clusterCount = 8,
+  // Network settings (will be scaled based on screen size)
+  baseClusterCount = 8,
   clusterDensity = 0.4,
-  connectionDistance = 120,
+  baseConnectionDistance = 120,
   
   // Opacity settings
   minOpacity = 0.3,
@@ -38,14 +38,15 @@ const TechnicalNetwork = ({
     const canvas = canvasRef.current;
     const ctx = canvas.getContext('2d');
     
-    // Set canvas size
-    const resizeCanvas = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    };
+    // Set fixed canvas size - never changes
+    canvas.width = 1920;
+    canvas.height = 1080;
     
-    resizeCanvas();
-    window.addEventListener('resize', resizeCanvas);
+    // Use fixed values - no scaling or resizing
+    const dotCount = baseDotCount;
+    const lineCount = baseLineCount;
+    const clusterCount = baseClusterCount;
+    const connectionDistance = baseConnectionDistance;
 
     // Create dots
     const createDots = () => {
@@ -198,18 +199,20 @@ const TechnicalNetwork = ({
     animate();
 
     return () => {
-      window.removeEventListener('resize', resizeCanvas);
       if (animationRef.current) {
         cancelAnimationFrame(animationRef.current);
       }
     };
-  }, [animationSpeed, driftSpeed, dotCount, lineCount, dotSize, lineWidth, dotColor, lineColor, clusterCount, clusterDensity, connectionDistance, minOpacity, maxOpacity]);
+  }, [animationSpeed, driftSpeed, baseDotCount, baseLineCount, dotSize, lineWidth, dotColor, lineColor, baseClusterCount, clusterDensity, baseConnectionDistance, minOpacity, maxOpacity]);
 
   return (
     <canvas
       ref={canvasRef}
       className="fixed inset-0 w-full h-full pointer-events-none z-0"
-      style={{ background: 'transparent' }}
+      style={{ 
+        background: 'transparent',
+        objectFit: 'cover'
+      }}
     />
   );
 };
