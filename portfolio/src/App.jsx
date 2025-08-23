@@ -17,8 +17,6 @@ import { ThemeProvider } from './contexts/ThemeContext.jsx'
 import content from './data/content.js'
 
 const App = () => {
-  console.log('App component rendering...')
-  
   return (
     <ThemeProvider>
       <ErrorBoundary>
