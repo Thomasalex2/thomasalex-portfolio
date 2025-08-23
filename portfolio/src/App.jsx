@@ -13,6 +13,7 @@ import ScrollProgress from './components/ScrollProgress.jsx'
 import BackToTop from './components/BackToTop.jsx'
 import TouchGestures from './components/TouchGestures.jsx'
 import BackgroundPatterns from './components/BackgroundPatterns.jsx'
+import TechnicalNetwork from './components/TechnicalNetwork.jsx'
 import { ThemeProvider } from './contexts/ThemeContext.jsx'
 import content from './data/content.js'
 
@@ -24,6 +25,7 @@ const App = () => {
           <ScrollProgress />
           <Starfield {...(content.starfield || {})} />
           <BackgroundPatterns />
+          <TechnicalNetwork />
           <div className="relative z-10">
             <Navbar />
             <main className="overflow-x-hidden">
