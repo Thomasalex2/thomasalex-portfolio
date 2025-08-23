@@ -15,20 +15,19 @@ const ThemeToggle = () => {
       aria-label={`Switch to ${isDark ? 'light' : 'dark'} theme`}
     >
       <motion.div
-        initial={false}
-        animate={{ rotate: isDark ? 0 : 180 }}
-        transition={{ duration: 0.3 }}
+        key={isDark ? 'dark' : 'light'}
+        initial={{ rotate: -180, opacity: 0 }}
+        animate={{ rotate: 0, opacity: 1 }}
+        exit={{ rotate: 180, opacity: 0 }}
+        transition={{ 
+          duration: 0.4,
+          ease: "easeInOut"
+        }}
       >
         {isDark ? (
           <HiSun size={20} className="text-yellow-400" />
         ) : (
-          <motion.div
-            initial={{ rotate: 0 }}
-            animate={{ rotate: 0 }}
-            transition={{ duration: 0.3 }}
-          >
-            <HiMoon size={20} className="text-blue-400" />
-          </motion.div>
+          <HiMoon size={20} className="text-blue-400" />
         )}
       </motion.div>
     </motion.button>
