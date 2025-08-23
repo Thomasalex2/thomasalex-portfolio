@@ -1,7 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { about } from '../data/content.js'
-import LazyImage from './LazyImage.jsx'
 
 const About = () => {
   return (
@@ -11,11 +10,11 @@ const About = () => {
           initial={{ opacity: 0, x: -24 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, amount: 0.4 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.3 }}
           className="flex justify-center"
         >
           <div className="relative">
-            <LazyImage
+            <img
               src={about.image}
               alt="Profile"
               className="w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 rounded-full object-cover border-2 border-forest glow-border"
@@ -26,7 +25,7 @@ const About = () => {
           initial={{ opacity: 0, x: 24 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, amount: 0.4 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.3 }}
           className="md:col-span-2"
         >
           <h2 className="font-heading text-2xl md:text-3xl font-bold">About</h2>

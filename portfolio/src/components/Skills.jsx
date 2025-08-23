@@ -15,7 +15,7 @@ const Skills = () => {
               key={group.category}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: groupIndex * 0.1, duration: 0.4 }}
+              transition={{ delay: groupIndex * 0.05, duration: 0.2 }}
               whileHover={{ y: -4, scale: 1.02 }}
               className="card p-6"
             >
@@ -26,7 +26,7 @@ const Skills = () => {
                     key={item}
                     initial={{ opacity: 0, x: -10 }}
                     whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ delay: (groupIndex * 0.1) + (itemIndex * 0.05), duration: 0.3 }}
+                    transition={{ delay: (groupIndex * 0.05) + (itemIndex * 0.02), duration: 0.2 }}
                     className="flex items-center gap-2 text-white/80 text-sm"
                   >
                     <div className="w-1.5 h-1.5 bg-forest rounded-full flex-shrink-0" />
