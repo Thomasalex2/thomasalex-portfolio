@@ -4,14 +4,45 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#121212" />
+    <meta name="description" content="Thomas Alex - Embedded Systems & Software Developer. Specializing in hardware design, IoT development, and embedded software solutions." />
+    <meta name="keywords" content="embedded systems, hardware engineer, IoT developer, PCB design, firmware development, Thomas Alex" />
+    <meta name="author" content="Thomas Alex" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://thomasalex.dev/" />
+    <meta property="og:title" content="Thomas Alex • Portfolio" />
+    <meta property="og:description" content="Embedded Systems & Software Developer specializing in hardware design and IoT development" />
+    <meta property="og:image" content="/images/profile_picture.jpg" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://thomasalex.dev/" />
+    <meta property="twitter:title" content="Thomas Alex • Portfolio" />
+    <meta property="twitter:description" content="Embedded Systems & Software Developer specializing in hardware design and IoT development" />
+    <meta property="twitter:image" content="/images/profile_picture.jpg" />
+    
+    <!-- PWA -->
+    <link rel="manifest" href="./manifest.json" />
+    <link rel="apple-touch-icon" href="./images/profile_picture.jpg" />
+    
     <title>Thomas Alex • Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <script type="module" crossorigin src="./assets/index-C4FLkyWf.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-i1rGJaNK.css">
+    <script type="module" crossorigin src="./assets/index-BYz2cxHz.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-DyJTc2F3.css">
   </head>
   <body>
+    <!-- Static hidden form so Netlify detects the form fields at build time -->
+    <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="hidden" name="form-name" value="contact" />
+      <input name="name" />
+      <input name="email" />
+      <textarea name="message"></textarea>
+      <input name="bot-field" />
+    </form>
+
     <div id="root"></div>
   </body>
   </html>
