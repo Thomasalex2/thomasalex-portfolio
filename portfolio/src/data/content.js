@@ -2,7 +2,7 @@ export const site = {
   name: 'Thomas Alex',
   role: 'Embedded Systems & Software Developer',
   tagline: 'Designing hardware and software for embedded systems and IoT devices.',
-  resumeUrl: 'https://drive.google.com/drive/folders/1otPriEFkailCrYQyNP-7foAO2rBTEkhh',
+  resumeUrl: 'https://drive.google.com/file/d/1h6K-PlVp1Hx3VHNxatQkoGNe1RGS2h6E/view?usp=sharing',
 }
 
 export const nav = [
@@ -74,9 +74,9 @@ export const experience = [
     period: 'Since November 2023',
     location: 'Galway, Ireland',
     points: [
-      'Designed and prototyped a Class II FDA medical device for atrial fibrillation (Afib) detection using ECG signals from the upper arm, focusing on long battery life and minimal user interaction',
+      'Designing and prototyping a Class II FDA medical device for atrial fibrillation (Afib) detection using ECG signals from the upper arm, focusing on long battery life and minimal user interaction',
       'Contributed to product ideation and feature selection, helping shape the roadmap for a wearable ECG monitor',
-      'Created multiple PCB designs — from engineering evaluation kits and test boards to the final product hardware',
+      'Created multiple PCB designs (up to 6 layers) — from engineering evaluation kits and test boards to the final product hardware',
       'Oversaw BOM selection, prototype bring-up, testing, and debugging to ensure robust hardware performance',
       'Collaborated closely with firmware and mechanical teams to integrate hardware into the full system design',
       'Developed Python scripts for ECG data extraction, visualization, and analysis to support both R&D and validation',

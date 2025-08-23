@@ -42,6 +42,16 @@ const Contact = () => {
       <div className="container-custom">
         <h2 className="font-heading text-2xl md:text-3xl font-bold">Contact</h2>
         
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.4 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="mt-4 text-left text-white/80 max-w-2xl mx-auto"
+        >
+          Have a product idea or a prototype and need a hardware engineer to help design it? Feel free to reach out and I will get back to you within 24 hours!
+        </motion.p>
+        
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
