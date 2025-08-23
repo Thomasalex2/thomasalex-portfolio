@@ -23,11 +23,29 @@ const Experience = () => {
               variants={itemVariants}
               custom={index + 1}
             >
-              <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2 mb-4">
-                <div>
-                  <h3 className="font-semibold text-lg">
-                    {job.role} <span className="text-white/60">• {job.company}</span>
-                  </h3>
+              <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-4">
+                <div className="flex items-center gap-4">
+                  {job.logo && (
+                    <div className="w-16 h-16 bg-white/5 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <img 
+                        src={job.logo} 
+                        alt={`${job.company} logo`}
+                        className="w-12 h-12 object-contain"
+                        onError={(e) => {
+                          e.target.style.display = 'none'
+                          e.target.nextSibling.style.display = 'flex'
+                        }}
+                      />
+                      <div className="hidden w-12 h-12 bg-white/10 rounded items-center justify-center text-white/40 text-xs font-medium">
+                        {job.company.charAt(0)}
+                      </div>
+                    </div>
+                  )}
+                  <div>
+                    <h3 className="font-semibold text-lg">
+                      {job.role} <span className="text-white/60">• {job.company}</span>
+                    </h3>
+                  </div>
                 </div>
                 <div className="text-sm text-white/60">
                   {job.period} • {job.location}

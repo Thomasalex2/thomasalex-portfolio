@@ -80,7 +80,7 @@ export const experience = [
     company: 'Galenband',
     period: 'Since November 2023',
     location: 'Galway, Ireland',
-    logo: '/images/company-logos/galenband.png', // Placeholder - you can add actual logos
+    logo: '/images/company-logos/galenband.jpeg', // Using available logo for now
     points: [
       'Designing and prototyping a Class II FDA medical device for atrial fibrillation (Afib) detection using ECG signals from the upper arm, focusing on long battery life and minimal user interaction',
       'Contributed to product ideation and feature selection, helping shape the roadmap for a wearable ECG monitor',
@@ -95,7 +95,7 @@ export const experience = [
     company: 'TIF Labs',
     period: 'January 2020 – May 2023',
     location: 'Bangalore, India',
-    logo: '/images/company-logos/tif-labs.png', // Placeholder - you can add actual logos
+    logo: '/images/company-logos/tiflabs.png',
     points: [
       'Designed and developed 20+ microcontroller PCBs, sensor boards, breakouts, and full-fledged products',
       'Python developer - CLI-based helper tools, inferencing bots, tester applications and RPA - based automation bots for hospitals',
