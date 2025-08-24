@@ -12,16 +12,36 @@ export const useTheme = () => {
 
 export const ThemeProvider = ({ children }) => {
   const [isDark, setIsDark] = useState(true)
+  const [hasUserPreference, setHasUserPreference] = useState(false)
 
   useEffect(() => {
     try {
-      // Check for saved theme preference or default to dark
+      // Check for saved theme preference
       const savedTheme = localStorage.getItem('theme')
-      if (savedTheme) {
+      const hasUserToggled = localStorage.getItem('hasUserToggled')
+      
+      if (savedTheme && hasUserToggled === 'true') {
+        // User has explicitly chosen a theme, respect their choice
         setIsDark(savedTheme === 'dark')
+        setHasUserPreference(true)
+      } else if (savedTheme) {
+        // First time visitor with saved theme, check if it matches system preference
+        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+        const savedThemeMatchesSystem = (savedTheme === 'dark') === systemPrefersDark
+        
+        if (savedThemeMatchesSystem) {
+          // Theme matches system preference, use it
+          setIsDark(savedTheme === 'dark')
+        } else {
+          // Theme doesn't match system preference, use system preference
+          setIsDark(systemPrefersDark)
+          localStorage.setItem('theme', systemPrefersDark ? 'dark' : 'light')
+        }
       } else {
-        // Check system preference
-        setIsDark(window.matchMedia('(prefers-color-scheme: dark)').matches)
+        // First time visitor, use system preference
+        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+        setIsDark(systemPrefersDark)
+        localStorage.setItem('theme', systemPrefersDark ? 'dark' : 'light')
       }
     } catch (error) {
       console.error('Error setting theme:', error)
@@ -29,6 +49,20 @@ export const ThemeProvider = ({ children }) => {
       setIsDark(true)
     }
   }, [])
+
+  // Listen for system theme changes (only for users who haven't explicitly chosen)
+  useEffect(() => {
+    if (hasUserPreference) return // Don't listen if user has explicitly chosen
+
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
+    const handleChange = (e) => {
+      setIsDark(e.matches)
+      localStorage.setItem('theme', e.matches ? 'dark' : 'light')
+    }
+
+    mediaQuery.addEventListener('change', handleChange)
+    return () => mediaQuery.removeEventListener('change', handleChange)
+  }, [hasUserPreference])
 
   useEffect(() => {
     // Apply theme to document
@@ -39,6 +73,9 @@ export const ThemeProvider = ({ children }) => {
 
   const toggleTheme = () => {
     setIsDark(!isDark)
+    // Mark that user has explicitly chosen a theme
+    localStorage.setItem('hasUserToggled', 'true')
+    setHasUserPreference(true)
   }
 
   return (
