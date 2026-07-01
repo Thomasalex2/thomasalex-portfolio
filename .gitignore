@@ -1,0 +1,12 @@
+# Dependencies & build output (installed/built on Netlify)
+portfolio/node_modules/
+portfolio/dist/
+
+# Local env
+.env
+.env.*
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.log
