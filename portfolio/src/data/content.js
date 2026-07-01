@@ -76,18 +76,20 @@ export const skills = [
 
 export const experience = [
   {
-    role: 'Hardware & Software Engineer',
+    role: 'Product Systems Engineer',
     company: 'Galenband',
     period: 'Since November 2023',
     location: 'Galway, Ireland',
     logo: '/images/company-logos/galenband.jpeg', // Using available logo for now
     points: [
-      'Designing and prototyping a Class II FDA medical device for atrial fibrillation (Afib) detection using ECG signals from the upper arm, focusing on long battery life and minimal user interaction',
+      'Designing and prototyping a Class II FDA medical device for atrial fibrillation (Afib) detection by acquiring Lead I equivalent ECG signals from upper left arm',
+      'Architected ultra-low-power hardware featuring discrete power management stages for long battery life and minimal user interaction',
       'Contributed to product ideation and feature selection, helping shape the roadmap for a wearable ECG monitor',
-      'Created multiple PCB designs (up to 6 layers) — from engineering evaluation kits and test boards to the final product hardware',
+      'Designed and developed multiple high density PCB designs (up to 8 layers) — from engineering evaluation kits, test boards, interface boards to the final product hardware',
       'Oversaw BOM selection, prototype bring-up, testing, and debugging to ensure robust hardware performance',
       'Collaborated closely with firmware and mechanical teams to integrate hardware into the full system design',
-      'Developed Python scripts for ECG data extraction, visualization, and analysis to support both R&D and validation',
+      'Developed Python scripts and automation tools for ECG data extraction, visualization, and analysis to support both R&D and validation',
+      'Created internal software tools and web portals to interface with prototypes for live data analysis, demos and data collection'
     ],
   },
   {

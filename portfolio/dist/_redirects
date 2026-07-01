@@ -3,3 +3,4 @@
 
 # Force HTTPS (backup to netlify.toml)
 http://:domain/*  https://:domain/:splat  301!
+
