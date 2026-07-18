@@ -147,7 +147,7 @@ export const projects = [
     description:
       'Drone photography, inspections, and interactive 3D models captured from aerial footage.',
     link: '/aerial',
-    image: '/images/aerial/aerial-cover.svg',
+    image: '/images/aerial/aerial-cover.jpg',
     techStack: ['Drone', 'Photogrammetry', '3D Capture', '3D Modelling'],
     category: 'Digital Assets',
     difficulty: 'Advanced',
