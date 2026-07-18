@@ -1,29 +1,41 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { projects } from '../data/content.js'
 import { HiOutlineExternalLink } from 'react-icons/hi'
 
-const ProjectCard = ({ project, hasLink, Component }) => {
+const MotionLink = motion(Link)
+const MotionA = motion.a
+const MotionDiv = motion.div
+
+const ProjectCard = ({ project, hasLink, isInternal, Component }) => {
+  const linkProps = hasLink
+    ? isInternal
+      ? { to: project.link }
+      : {
+          href: project.link,
+          target: '_blank',
+          rel: 'noreferrer noopener',
+        }
+    : {}
 
   return (
     <Component
-      href={hasLink ? project.link : undefined}
-      target={hasLink && project.link?.startsWith('http') ? '_blank' : undefined}
-      rel={hasLink && project.link?.startsWith('http') ? 'noreferrer noopener' : undefined}
+      {...linkProps}
       className={`card overflow-hidden group h-full flex flex-col ${hasLink ? 'cursor-pointer' : ''}`}
       {...(hasLink && {
-        whileHover: { 
+        whileHover: {
           scale: 1.02,
           y: -4,
-          transition: { duration: 0.2 }
-        }
+          transition: { duration: 0.2 },
+        },
       })}
     >
       <div className="h-32 sm:h-40 bg-white/5 overflow-hidden">
-        <img 
-          src={project.image} 
-          alt={project.title} 
-          className="w-full h-full object-cover group-hover:opacity-90 transition-opacity" 
+        <img
+          src={project.image}
+          alt={project.title}
+          className="w-full h-full object-cover group-hover:opacity-90 transition-opacity"
         />
       </div>
       <div className="p-4 sm:p-5 flex-1 flex flex-col">
@@ -34,8 +46,7 @@ const ProjectCard = ({ project, hasLink, Component }) => {
           )}
         </div>
         <p className="text-xs sm:text-sm text-white/80 mb-3 flex-1">{project.description}</p>
-        
-        {/* Tech Stack Tags */}
+
         {project.techStack && (
           <div className="flex flex-wrap gap-1 mb-2">
             {project.techStack.map((tech, index) => (
@@ -48,13 +59,10 @@ const ProjectCard = ({ project, hasLink, Component }) => {
             ))}
           </div>
         )}
-        
-        {/* Project Meta */}
+
         <div className="flex items-center justify-between text-xs text-white/60 mt-auto pt-2 border-t border-white/10">
           <span className="capitalize">{project.category}</span>
-          <span className="px-2 py-1 bg-white/10 rounded-full">
-            {project.difficulty}
-          </span>
+          <span className="px-2 py-1 bg-white/10 rounded-full">{project.difficulty}</span>
         </div>
       </div>
     </Component>
@@ -69,13 +77,15 @@ const Projects = () => {
         <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {projects.map((project) => {
             const hasLink = project.link && project.link !== '_blank'
-            const Component = hasLink ? motion.a : motion.div
-            
+            const isInternal = hasLink && project.link.startsWith('/')
+            const Component = !hasLink ? MotionDiv : isInternal ? MotionLink : MotionA
+
             return (
               <ProjectCard
                 key={project.title}
                 project={project}
                 hasLink={hasLink}
+                isInternal={isInternal}
                 Component={Component}
               />
             )
@@ -87,5 +97,3 @@ const Projects = () => {
 }
 
 export default Projects
-
-

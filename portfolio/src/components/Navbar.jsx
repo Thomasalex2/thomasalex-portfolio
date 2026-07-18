@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { HiMenu, HiX } from 'react-icons/hi'
 import { nav } from '../data/content.js'
@@ -57,7 +58,7 @@ const Navbar = () => {
   return (
     <header className="sticky top-0 z-50 backdrop-blur-md bg-charcoal/70 border-b border-white/10">
       <div className="container-custom flex items-center justify-between h-16">
-        <a href="#top" className="font-heading font-bold text-lg">Thomas Alex</a>
+        <Link to="/" className="font-heading font-bold text-lg">Thomas Alex</Link>
 
         <nav className="hidden md:flex items-center gap-2 absolute left-1/2 transform -translate-x-1/2">
           {links}

@@ -8,6 +8,7 @@ export const site = {
 export const nav = [
   { label: 'About', href: '#about' },
   { label: 'Experience', href: '#experience' },
+  { label: 'Services', href: '#services' },
   { label: 'Projects', href: '#projects' },
   { label: 'Contact', href: '#contact' },
   { label: 'View CV', href: site.resumeUrl, external: true },
@@ -80,7 +81,7 @@ export const experience = [
     company: 'Galenband',
     period: 'Since November 2023',
     location: 'Galway, Ireland',
-    logo: '/images/company-logos/galenband.jpeg', // Using available logo for now
+    logo: '/images/company-logos/galenband.jpeg',
     points: [
       'Designing and prototyping a Class II FDA medical device for atrial fibrillation (Afib) detection by acquiring Lead I equivalent ECG signals from upper left arm',
       'Architected ultra-low-power hardware featuring discrete power management stages for long battery life and minimal user interaction',
@@ -110,7 +111,47 @@ export const experience = [
   },
 ]
 
+export const services = [
+  {
+    id: 'hardware-iot',
+    title: 'Embedded Hardware & IoT Prototypes',
+    description:
+      'PCB design, firmware, sensor integration, and device-to-cloud systems — from schematic to working prototype.',
+    href: '#contact',
+    inquiryType: 'Hardware & IoT',
+    cta: 'Get in touch',
+  },
+  {
+    id: 'websites',
+    title: 'Websites for Small Businesses',
+    description:
+      'Clean, fast sites that present your brand clearly. This portfolio is an example of the kind of build I deliver — more client demos coming soon.',
+    href: '#contact',
+    inquiryType: 'Websites',
+    cta: 'Get in touch',
+  },
+  {
+    id: 'aerial',
+    title: 'Aerial Imaging & 3D Capture',
+    description:
+      'Drone photography, inspections, and interactive 3D models captured from aerial footage.',
+    href: '/aerial',
+    inquiryType: 'Aerial',
+    cta: 'View aerial work',
+  },
+]
+
 export const projects = [
+  {
+    title: 'Aerial Imaging & 3D Capture',
+    description:
+      'Drone photography, inspections, and interactive 3D models captured from aerial footage.',
+    link: '/aerial',
+    image: '/images/aerial/aerial-cover.svg',
+    techStack: ['Drone', 'Photogrammetry', '3D Capture', '3D Modelling'],
+    category: 'Digital Assets',
+    difficulty: 'Advanced',
+  },
   {
     title: "Gait Characterisation and Analysis - Master's Project",
     description:
@@ -119,7 +160,7 @@ export const projects = [
     image: '/images/gait.png',
     techStack: ['C++', 'Arduino', 'Sensors', 'Data Analysis', 'Python'],
     category: 'Hardware & Data Analysis',
-    difficulty: 'Advanced'
+    difficulty: 'Advanced',
   },
   {
     title: 'TV Show Renamer',
@@ -129,7 +170,7 @@ export const projects = [
     image: '/images/show_renamer.png',
     techStack: ['Python', 'PyQt', 'Web Scraping', 'File Management', 'GUI Design'],
     category: 'Software',
-    difficulty: 'Intermediate'
+    difficulty: 'Intermediate',
   },
   {
     title: 'ESP32-S3 Breakout Board',
@@ -139,19 +180,131 @@ export const projects = [
     image: '/images/esp32.png',
     techStack: ['PCB Design', 'ESP32-S3', 'Power Management', 'USB-C', 'BOM', 'KiCad'],
     category: 'Hardware & PCB Design',
-    difficulty: 'Intermediate'
-  }
+    difficulty: 'Intermediate',
+  },
 ]
 
-
+export const inquiryTypes = ['Hardware & IoT', 'Websites', 'Aerial', 'Other']
 
 export const contact = {
   email: 'thomasalexk@outlook.com',
-  message: 'Do you have a product idea or a prototype and need a hardware engineer to help design it? Feel free to reach out and I will get back to you within 24 hours!',
+  message:
+    'Do you have a product idea or a prototype and need a hardware engineer to help design it? Feel free to reach out and I will get back to you within 24 hours!',
   social: {
     github: 'https://github.com/ThomasAlex2',
     linkedin: 'https://linkedin.com/in/thomas-alex-one',
     instagram: 'https://www.instagram.com/notreallythomas_/',
+  },
+}
+
+export const aerial = {
+  meta: {
+    title: 'Aerial Photography & 3D Capture | Thomas Alex — Galway, Ireland',
+    description:
+      'Drone aerial photography, property and roof inspections, construction progress, and interactive 3D models from aerial capture. Based in Galway, Ireland.',
+  },
+  hero: {
+    brand: 'Aerial by Thomas Alex',
+    headline: 'Aerial photography, inspections & 3D capture',
+    subcopy:
+      'Property, construction, and inspection captures — plus photorealistic 3D models rebuilt from the same flight.',
+    // Still used as poster / fallback while the video loads (and if videoSrc is empty)
+    coverImage: '/images/aerial/aerial-cover.svg',
+    // Drop a short muted loop here, e.g. '/videos/aerial/galway-hero.mp4' (10–20s, H.264, <15MB ideal)
+    videoSrc: '/videos/aerial/galway-hero.mp4',
+    ctaPrimary: { label: 'Request a shoot', href: '#aerial-contact' },
+    ctaSecondary: { label: '3D capture', href: '#aerial-3d' },
+    location: 'Galway, Ireland & surrounding areas',
+  },
+  capture: {
+    title: 'What I capture',
+    subtitle: 'Clear aerial stills and video for real-world decisions — not just pretty flyovers.',
+    items: [
+      {
+        title: 'Property & estates',
+        description: 'Marketing-ready overview shots and site context for listings and portfolios.',
+        image: '/images/aerial/gallery-property.jpg',
+      },
+      {
+        title: 'Construction progress',
+        description: 'Repeatable progress documentation for stakeholders and project records.',
+        image: '/images/aerial/gallery-construction.jpg',
+      },
+      {
+        title: 'Roof & exterior inspection',
+        description: 'Hard-to-reach views that help spot issues without scaffolding on day one.',
+        image: '/images/aerial/gallery-roof.jpg',
+      },
+      {
+        title: 'Events & landscapes',
+        description: 'Cinematic aerials for venues, campuses, and scenic locations.',
+        image: '/images/aerial/gallery-landscape.jpg',
+      },
+    ],
+  },
+  showreel: {
+    title: 'Showreel',
+    subtitle: 'A short look at flight footage and deliverable style.',
+    // Paste YouTube video ID only (the part after v=). Unlisted is fine.
+    youtubeId: '',
+    poster: '/images/aerial/showreel-poster.svg',
+  },
+  capture3d: {
+    title: '3D capture & modelling',
+    subtitle: 'Beyond photos — a digital twin of the site from the air.',
+    body:
+      'From a structured drone flight I can rebuild a site as a photorealistic 3D model. You get a digital record you can revisit from any angle — useful when stills and video alone do not tell the full story. Deliverables are tailored per job: stills from the model, exported 3D assets, or a shareable viewing package for clients and stakeholders.',
+    image: '/images/aerial/splat-poster.jpg',
+    imageAlt: 'Example aerial 3D capture of a property',
+    imageCaption: 'Example of a site reconstructed from aerial footage.',
+    ctaLabel: 'Ask about 3D capture',
+    useCases: [
+      'Property marketing and remote walkthroughs',
+      'Construction progress archives for stakeholders',
+      'Roof and exterior context without repeat site visits',
+      'Insurance, survey, and inspection support packs',
+    ],
+    benefits: [
+      {
+        title: 'Any angle, later',
+        description: 'Revisit the site after the flight — no need to schedule another visit for a missed viewpoint.',
+      },
+      {
+        title: 'Clearer than a flyover alone',
+        description: 'Photorealistic detail that helps clients understand layout, condition, and context.',
+      },
+      {
+        title: 'Easy to share',
+        description: 'Hand off stills, exports, or a viewing package that stakeholders can open without specialist software.',
+      },
+      {
+        title: 'Built from the same flight',
+        description: 'Often captured alongside your photography or inspection pass — efficient for one site visit.',
+      },
+    ],
+    // Live interactive viewer paused for now (heavy on browsers). Files kept under public/splats/ for later.
+    // viewerEnabled: false,
+    // url: '/splats/house-shot.spz',
+  },
+  deliverables: {
+    title: 'Deliverables',
+    subtitle: 'Pick what you need — custom quotes for every shoot.',
+    items: [
+      { title: 'Still photography', description: 'Edited high-resolution aerial stills ready for web or print.' },
+      { title: 'Video / showreel clips', description: 'Stabilised flight footage and short edited sequences.' },
+      {
+        title: '3D capture & models',
+        description:
+          'Photorealistic 3D reconstruction of the site — stills, exports, or a shareable viewing package on request.',
+      },
+      { title: 'Inspection packs', description: 'Annotated stills highlighting areas of interest on request.' },
+    ],
+  },
+  contact: {
+    title: 'Request a shoot',
+    subtitle: 'Tell me the site, timing, and what you need delivered. I usually reply within 24 hours.',
+    message:
+      'Looking for aerial photography, an inspection pass, or a 3D model of a site? Send a few details and I will follow up with availability and a quote.',
   },
 }
 
@@ -162,8 +315,11 @@ export default {
   about,
   skills,
   experience,
+  services,
   projects,
+  inquiryTypes,
   contact,
+  aerial,
   starfield: {
     count: 120,
     speed: 0.25,
@@ -192,5 +348,3 @@ export default {
     },
   },
 }
-
-

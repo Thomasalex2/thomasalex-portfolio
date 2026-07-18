@@ -66,24 +66,127 @@ html.light .text-white\/60 {
   @apply text-gray-600;
 }
 
-html.light .hover\:text-white {
-  @apply hover:text-gray-900;
+html.light .hover\:text-white:hover {
+  color: rgb(17 24 39); /* gray-900 */
 }
 
-html.light .hover\:bg-white\/5 {
-  @apply hover:bg-gray-100;
+html.light .hover\:bg-white\/5:hover {
+  background-color: rgb(243 244 246); /* gray-100 */
 }
 
 html.light .bg-white\/5 {
-  @apply bg-gray-100;
+  background-color: rgb(243 244 246); /* gray-100 */
 }
 
 html.light .border-white\/10 {
-  @apply border-gray-200;
+  border-color: rgb(229 231 235); /* gray-200 */
 }
 
 html.light .border-white\/20 {
-  @apply border-gray-300;
+  border-color: rgb(209 213 219); /* gray-300 */
+}
+
+html.light .text-white\/75 {
+  color: rgb(55 65 81); /* gray-700 */
+}
+
+html.light .text-white\/50 {
+  color: rgb(107 114 128); /* gray-500 */
+}
+
+html.light .text-white\/30 {
+  color: rgb(156 163 175); /* gray-400 */
+}
+
+html.light .border-white\/5 {
+  border-color: rgb(243 244 246); /* gray-100 */
+}
+
+html.light .bg-white\/\[0\.03\] {
+  background-color: #fff;
+  border-color: rgb(229 231 235);
+}
+
+html.light .hover\:bg-white\/10:hover {
+  background-color: rgb(229 231 235); /* gray-200 */
+}
+
+/* Aerial page theme surfaces */
+.aerial-page {
+  @apply bg-charcoal text-white;
+}
+
+.aerial-page-glow {
+  opacity: 0.3;
+  background:
+    radial-gradient(ellipse 100% 60% at 80% 0%, rgba(14, 77, 58, 0.45), transparent 55%),
+    linear-gradient(180deg, #0d1512 0%, #121212 40%, #121212 100%);
+}
+
+.aerial-hero-scrim {
+  background: linear-gradient(
+    to bottom,
+    rgba(18, 18, 18, 0.7),
+    rgba(18, 18, 18, 0.8),
+    #121212
+  );
+}
+
+.aerial-hero-glow {
+  background: radial-gradient(ellipse 80% 50% at 50% 20%, rgba(25, 133, 95, 0.35), transparent 60%);
+}
+
+.aerial-hero-title {
+  @apply text-white;
+}
+
+html.light .aerial-page {
+  @apply bg-gray-50 text-gray-900;
+}
+
+html.light .aerial-page-glow {
+  opacity: 0.55;
+  background:
+    radial-gradient(ellipse 100% 50% at 80% 0%, rgba(25, 133, 95, 0.18), transparent 55%),
+    linear-gradient(180deg, #eef5f1 0%, #f9fafb 45%, #f9fafb 100%);
+}
+
+html.light .aerial-hero-scrim {
+  background: linear-gradient(
+    to bottom,
+    rgba(18, 18, 18, 0.55),
+    rgba(18, 18, 18, 0.45),
+    #f9fafb
+  );
+}
+
+html.light .aerial-hero-title {
+  @apply text-white;
+  text-shadow: 0 1px 18px rgba(0, 0, 0, 0.35);
+}
+
+html.light #aerial-top .text-white\/80 {
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.35);
+}
+
+html.light #aerial-top .text-white\/50 {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+html.light #aerial-top .btn-secondary {
+  border-color: rgba(255, 255, 255, 0.5);
+  color: #fff;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+html.light #aerial-top .btn-secondary:hover {
+  border-color: #fff;
+  color: #fff;
+}
+
+html.light .aerial-muted-slash {
+  @apply text-gray-400;
 }
 
 /* Enhanced card shadows */
@@ -137,7 +240,15 @@ html.light .border-white\/20 {
 }
 
 .btn-secondary {
-  @apply border border-white/20 hover:border-forest-light text-white/90 hover:text-white;
+  @apply border border-white/20 hover:border-forest-light text-white/90;
+}
+
+.btn-secondary:hover {
+  color: #fff;
+}
+
+html.light .btn-secondary:hover {
+  color: rgb(17 24 39); /* gray-900 — matches light theme link hover */
 }
 
 .card {
