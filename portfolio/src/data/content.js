@@ -304,7 +304,7 @@ export const aerial = {
     title: 'Request a shoot',
     subtitle: 'Tell me the site, timing, and what you need delivered. I usually reply within 24 hours.',
     message:
-      'Looking for aerial photography, an inspection pass, or a 3D model of a site? Send a few details and I will follow up with availability and a quote.',
+      'Contact for aerial photography, an inspection pass, or a 3D model of a site. Send a few details and I will follow up with availability and a quote.',
   },
 }
 

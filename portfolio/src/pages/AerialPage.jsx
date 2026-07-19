@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import ErrorBoundary from '../components/ErrorBoundary.jsx'
 import Footer from '../components/Footer.jsx'
 import BackToTop from '../components/BackToTop.jsx'
+import ScrollProgress from '../components/ScrollProgress.jsx'
 import AerialNavbar from '../components/aerial/AerialNavbar.jsx'
 import AerialHero from '../components/aerial/AerialHero.jsx'
 import AerialCapture from '../components/aerial/AerialCapture.jsx'
@@ -35,6 +36,7 @@ const AerialPage = () => {
   return (
     <ErrorBoundary>
       <div className="aerial-page min-h-screen relative">
+        <ScrollProgress />
         <div className="aerial-page-glow pointer-events-none fixed inset-0" aria-hidden="true" />
         <div className="relative z-10">
           <AerialNavbar />

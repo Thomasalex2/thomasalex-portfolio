@@ -18,12 +18,12 @@ const AerialNavbar = () => {
   return (
     <header className="sticky top-0 z-50 backdrop-blur-md bg-charcoal/70 border-b border-white/10">
       <div className="container-custom flex items-center justify-between h-16 relative">
-        <div className="flex items-center gap-4 z-10">
-          <Link to="/" className="font-heading font-bold text-lg hover:text-forest-light transition-colors">
+        <div className="flex items-center gap-2 sm:gap-4 z-10 min-w-0">
+          <Link to="/" className="font-heading font-bold text-base sm:text-lg hover:text-forest-light transition-colors truncate">
             Thomas Alex
           </Link>
-          <span className="hidden sm:inline text-white/30 aerial-muted-slash">/</span>
-          <a href="#aerial-top" className="hidden sm:inline text-sm text-forest-light font-medium">
+          <span className="text-white/30 aerial-muted-slash shrink-0">/</span>
+          <a href="#aerial-top" className="text-sm text-forest-light font-medium shrink-0">
             Aerial
           </a>
         </div>
