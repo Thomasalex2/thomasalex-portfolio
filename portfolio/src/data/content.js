@@ -187,7 +187,7 @@ export const projects = [
 export const inquiryTypes = ['Hardware & IoT', 'Websites', 'Aerial', 'Other']
 
 export const contact = {
-  email: 'thomasalexk@outlook.com',
+  email: 'thomasalex.developer@gmail.com',
   message:
     'Do you have a product idea or a prototype and need a hardware engineer to help design it? Feel free to reach out and I will get back to you within 24 hours!',
   social: {
