@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react-swc'
+import { resolve } from 'path'
 
 export default defineConfig({
   plugins: [react()],
@@ -9,6 +10,10 @@ export default defineConfig({
     outDir: 'dist',
     assetsDir: 'assets',
     rollupOptions: {
+      input: {
+        main: resolve(__dirname, 'index.html'),
+        aerial: resolve(__dirname, 'aerial.html'),
+      },
       output: {
         assetFileNames: (assetInfo) => {
           if (assetInfo.name.endsWith('.js')) {
@@ -23,5 +28,3 @@ export default defineConfig({
     }
   }
 })
-
-

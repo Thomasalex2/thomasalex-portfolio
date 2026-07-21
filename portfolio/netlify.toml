@@ -32,6 +32,17 @@
   status = 200
   force = true
 
+# Serve aerial-specific HTML (meta/OG tags) for crawlers and visitors
+[[redirects]]
+  from = "/aerial"
+  to = "/aerial.html"
+  status = 200
+
+[[redirects]]
+  from = "/aerial/"
+  to = "/aerial.html"
+  status = 200
+
 # SPA fallback for all other routes
 [[redirects]]
   from = "/*"

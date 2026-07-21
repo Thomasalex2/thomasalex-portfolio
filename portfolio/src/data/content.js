@@ -209,7 +209,7 @@ export const aerial = {
     subcopy:
       'Property, construction, and inspection captures — plus photorealistic 3D models rebuilt from the same flight.',
     // Still used as poster / fallback while the video loads (and if videoSrc is empty)
-    coverImage: '/images/aerial/aerial-cover.svg',
+    coverImage: '/images/aerial/aerial-cover.jpg',
     // Drop a short muted loop here, e.g. '/videos/aerial/galway-hero.mp4' (10–20s, H.264, <15MB ideal)
     videoSrc: '/videos/aerial/galway-hero.mp4',
     ctaPrimary: { label: 'Request a shoot', href: '#aerial-contact' },

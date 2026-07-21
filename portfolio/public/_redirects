@@ -1,3 +1,6 @@
-# SPA fallback - all routes fall back to index.html
-/*    /index.html   200
+# Aerial page gets its own HTML entry (correct OG / link-preview meta)
+/aerial    /aerial.html   200
+/aerial/   /aerial.html   200
 
+# SPA fallback - all other routes fall back to index.html
+/*    /index.html   200
