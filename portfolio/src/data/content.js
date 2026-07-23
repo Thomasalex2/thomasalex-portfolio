@@ -60,7 +60,7 @@ export const skills = [
       'IoT Product Development (device to cloud integration)',
       'System Architecture & BOM Optimisation',
       'Version Control & CI/CD (Git, GitHub Actions)',
-      'Continuous Learning & Tech Awareness — staying updated with modern tools, and industry trends'
+      'Continuous Learning & Tech Awareness: staying updated with modern tools and industry trends'
     ],
   },
   {
@@ -86,7 +86,7 @@ export const experience = [
       'Designing and prototyping a Class II FDA medical device for atrial fibrillation (Afib) detection by acquiring Lead I equivalent ECG signals from upper left arm',
       'Architected ultra-low-power hardware featuring discrete power management stages for long battery life and minimal user interaction',
       'Contributed to product ideation and feature selection, helping shape the roadmap for a wearable ECG monitor',
-      'Designed and developed multiple high density PCB designs (up to 8 layers) — from engineering evaluation kits, test boards, interface boards to the final product hardware',
+      'Designed and developed multiple high density PCB designs (up to 8 layers), from engineering evaluation kits, test boards, and interface boards through to the final product hardware',
       'Oversaw BOM selection, prototype bring-up, testing, and debugging to ensure robust hardware performance',
       'Collaborated closely with firmware and mechanical teams to integrate hardware into the full system design',
       'Developed Python scripts and automation tools for ECG data extraction, visualization, and analysis to support both R&D and validation',
@@ -96,7 +96,7 @@ export const experience = [
   {
     role: 'Embedded Systems Engineer',
     company: 'TIF Labs',
-    period: 'January 2020 – May 2023',
+    period: 'January 2020 to May 2023',
     location: 'Bangalore, India',
     logo: '/images/company-logos/tiflabs.png',
     points: [
@@ -116,16 +116,25 @@ export const services = [
     id: 'hardware-iot',
     title: 'Embedded Hardware & IoT Prototypes',
     description:
-      'PCB design, firmware, sensor integration, and device-to-cloud systems — from schematic to working prototype.',
+      'PCB design, firmware, sensor integration, and device-to-cloud systems, from schematic to working prototype.',
     href: '#contact',
     inquiryType: 'Hardware & IoT',
+    cta: 'Get in touch',
+  },
+  {
+    id: 'automation',
+    title: 'Internal Automation Tools',
+    description:
+      'Custom scripts and programs that turn repetitive manual work into reliable automated systems: faster workflows, fewer human errors, and more consistent results.',
+    href: '#contact',
+    inquiryType: 'Automation',
     cta: 'Get in touch',
   },
   {
     id: 'websites',
     title: 'Websites for Small Businesses',
     description:
-      'Clean, fast sites that present your brand clearly. This portfolio is an example of the kind of build I deliver — more client demos coming soon.',
+      'Clean, fast sites that present your brand clearly. This portfolio is an example of the kind of build I deliver. More client demos coming soon.',
     href: '#contact',
     inquiryType: 'Websites',
     cta: 'Get in touch',
@@ -184,7 +193,7 @@ export const projects = [
   },
 ]
 
-export const inquiryTypes = ['Hardware & IoT', 'Websites', 'Aerial', 'Other']
+export const inquiryTypes = ['Hardware & IoT', 'Automation', 'Websites', 'Aerial', 'Other']
 
 export const contact = {
   email: 'thomasalex.developer@gmail.com',
@@ -199,7 +208,7 @@ export const contact = {
 
 export const aerial = {
   meta: {
-    title: 'Aerial Photography & 3D Capture | Thomas Alex — Galway, Ireland',
+    title: 'Aerial Photography & 3D Capture | Thomas Alex | Galway, Ireland',
     description:
       'Drone aerial photography, property and roof inspections, construction progress, and interactive 3D models from aerial capture. Based in Galway, Ireland.',
   },
@@ -207,10 +216,10 @@ export const aerial = {
     brand: 'Aerial by Thomas Alex',
     headline: 'Aerial photography, inspections & 3D capture',
     subcopy:
-      'Property, construction, and inspection captures — plus photorealistic 3D models rebuilt from the same flight.',
+      'Property, construction, and inspection captures, plus photorealistic 3D models rebuilt from the same flight.',
     // Still used as poster / fallback while the video loads (and if videoSrc is empty)
     coverImage: '/images/aerial/aerial-cover.jpg',
-    // Drop a short muted loop here, e.g. '/videos/aerial/galway-hero.mp4' (10–20s, H.264, <15MB ideal)
+    // Drop a short muted loop here, e.g. '/videos/aerial/galway-hero.mp4' (10-20s, H.264, <15MB ideal)
     videoSrc: '/videos/aerial/galway-hero.mp4',
     ctaPrimary: { label: 'Request a shoot', href: '#aerial-contact' },
     ctaSecondary: { label: '3D capture', href: '#aerial-3d' },
@@ -218,7 +227,7 @@ export const aerial = {
   },
   capture: {
     title: 'What I capture',
-    subtitle: 'Clear aerial stills and video for real-world decisions — not just pretty flyovers.',
+    subtitle: 'Clear aerial stills and video for real-world decisions, not just pretty flyovers.',
     items: [
       {
         title: 'Property & estates',
@@ -251,9 +260,9 @@ export const aerial = {
   },
   capture3d: {
     title: '3D capture & modelling',
-    subtitle: 'Beyond photos — a digital twin of the site from the air.',
+    subtitle: 'Beyond photos: a digital twin of the site from the air.',
     body:
-      'From a structured drone flight I can rebuild a site as a photorealistic 3D model. You get a digital record you can revisit from any angle — useful when stills and video alone do not tell the full story. Deliverables are tailored per job: stills from the model, exported 3D assets, or a shareable viewing package for clients and stakeholders.',
+      'From a structured drone flight I can rebuild a site as a photorealistic 3D model. You get a digital record you can revisit from any angle, useful when stills and video alone do not tell the full story. Deliverables are tailored per job: stills from the model, exported 3D assets, or a shareable viewing package for clients and stakeholders.',
     image: '/images/aerial/splat-poster.jpg',
     imageAlt: 'Example aerial 3D capture of a property',
     imageCaption: 'Example of a site reconstructed from aerial footage.',
@@ -267,7 +276,7 @@ export const aerial = {
     benefits: [
       {
         title: 'Any angle, later',
-        description: 'Revisit the site after the flight — no need to schedule another visit for a missed viewpoint.',
+        description: 'Revisit the site after the flight. No need to schedule another visit for a missed viewpoint.',
       },
       {
         title: 'Clearer than a flyover alone',
@@ -279,23 +288,20 @@ export const aerial = {
       },
       {
         title: 'Built from the same flight',
-        description: 'Often captured alongside your photography or inspection pass — efficient for one site visit.',
+        description: 'Often captured alongside your photography or inspection pass, so one site visit covers more.',
       },
     ],
-    // Live interactive viewer paused for now (heavy on browsers). Files kept under public/splats/ for later.
-    // viewerEnabled: false,
-    // url: '/splats/house-shot.spz',
   },
   deliverables: {
     title: 'Deliverables',
-    subtitle: 'Pick what you need — custom quotes for every shoot.',
+    subtitle: 'Pick what you need. Custom quotes for every shoot.',
     items: [
       { title: 'Still photography', description: 'Edited high-resolution aerial stills ready for web or print.' },
       { title: 'Video / showreel clips', description: 'Stabilised flight footage and short edited sequences.' },
       {
         title: '3D capture & models',
         description:
-          'Photorealistic 3D reconstruction of the site — stills, exports, or a shareable viewing package on request.',
+          'Photorealistic 3D reconstruction of the site: stills, exports, or a shareable viewing package on request.',
       },
       { title: 'Inspection packs', description: 'Annotated stills highlighting areas of interest on request.' },
     ],
@@ -320,31 +326,32 @@ export default {
   inquiryTypes,
   contact,
   aerial,
+  // Quieter ambient background for the main (engineering) site only
   starfield: {
-    count: 120,
-    speed: 0.25,
-    maxStarSize: 2.2,
-    minStarSize: 0.4,
+    count: 80,
+    speed: 0.15,
+    maxStarSize: 1.6,
+    minStarSize: 0.35,
     starColor: '#E6F7F2',
-    twinkle: { enabled: true, speed: 0.02, minOpacity: 0.15, maxOpacity: 0.9 },
+    twinkle: { enabled: true, speed: 0.012, minOpacity: 0.12, maxOpacity: 0.55 },
     movement: {
       type: 'direction',
       directionAngleDeg: 30,
       parallax: {
         layers: 3,
-        layerSpeeds: [0.35, 0.7, 1.2],
-        layerCounts: [0.5, 0.3, 0.2],
-        sizeMultipliers: [0.7, 1, 1.4],
+        layerSpeeds: [0.2, 0.4, 0.7],
+        layerCounts: [0.55, 0.3, 0.15],
+        sizeMultipliers: [0.65, 1, 1.25],
       },
     },
     shootingStars: {
       enabled: true,
-      intervalSeconds: 10,
-      speed: 10,
-      length: 160,
+      intervalSeconds: 22,
+      speed: 8,
+      length: 120,
       angleDeg: 40,
-      spreadDeg: 25,
-      opacity: 0.85,
+      spreadDeg: 20,
+      opacity: 0.55,
     },
   },
 }

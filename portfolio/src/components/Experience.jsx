@@ -1,65 +1,49 @@
 import React from 'react'
-import { motion } from 'framer-motion'
 import { experience } from '../data/content.js'
-
-const itemVariants = {
-  hidden: { opacity: 0, x: -20 },
-  visible: (i) => ({ opacity: 1, x: 0, transition: { delay: 0.1 * i, duration: 0.5 } })
-}
 
 const Experience = () => {
   return (
-    <section id="experience" className="section">
+    <section id="experience" className="section border-t hairline-soft">
       <div className="container-custom">
-        <h2 className="font-heading text-2xl md:text-3xl font-bold">Experience</h2>
-        <div className="mt-8 space-y-6">
-          {experience.map((job, index) => (
-            <motion.div
-              key={job.company + job.role}
-              className="card p-6"
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.4 }}
-              variants={itemVariants}
-              custom={index + 1}
-            >
-              <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-4">
-                <div className="flex items-center gap-4">
+        <h2 className="font-heading text-2xl md:text-3xl font-bold ink">Experience</h2>
+        <p className="mt-3 ink-muted max-w-2xl">
+          Product hardware and embedded systems roles across medical and IoT.
+        </p>
+
+        <div className="mt-6 space-y-5">
+          {experience.map((job) => (
+            <article key={job.company + job.role} className="p-5 border-l-2 border-forest/60 surface-soft">
+              <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3">
+                <div className="flex items-start gap-3">
                   {job.logo && (
-                    <div className="w-16 h-16 bg-white/5 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <img 
-                        src={job.logo} 
+                    <div className="w-12 h-12 surface-elevated rounded-lg flex items-center justify-center flex-shrink-0 border hairline">
+                      <img
+                        src={job.logo}
                         alt={`${job.company} logo`}
-                        className="w-12 h-12 object-contain"
-                        onError={(e) => {
-                          e.target.style.display = 'none'
-                          e.target.nextSibling.style.display = 'flex'
-                        }}
+                        className="w-8 h-8 object-contain"
                       />
-                      <div className="hidden w-12 h-12 bg-white/10 rounded items-center justify-center text-white/40 text-xs font-medium">
-                        {job.company.charAt(0)}
-                      </div>
                     </div>
                   )}
                   <div>
-                    <h3 className="font-semibold text-lg">
-                      {job.role} <span className="text-white/60">• {job.company}</span>
+                    <h3 className="font-heading font-semibold ink">
+                      {job.role}
+                      <span className="ink-subtle font-normal"> · {job.company}</span>
                     </h3>
+                    <p className="mt-1 text-sm ink-faint">
+                      {job.period} · {job.location}
+                    </p>
                   </div>
-                </div>
-                <div className="text-sm text-white/60">
-                  {job.period} • {job.location}
                 </div>
               </div>
-              <div className="space-y-3">
-                {job.points.map((point, pointIndex) => (
-                  <div key={pointIndex} className="flex gap-3">
-                    <div className="w-1.5 h-1.5 bg-forest rounded-full mt-2 flex-shrink-0" />
-                    <p className="text-white/80 text-sm leading-relaxed">{point}</p>
-                  </div>
+
+              <ul className="mt-4 space-y-2">
+                {job.points.map((point) => (
+                  <li key={point} className="text-sm ink-muted pl-4 border-l border-forest/30 leading-relaxed">
+                    {point}
+                  </li>
                 ))}
-              </div>
-            </motion.div>
+              </ul>
+            </article>
           ))}
         </div>
       </div>
@@ -68,5 +52,3 @@ const Experience = () => {
 }
 
 export default Experience
-
-

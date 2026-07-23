@@ -12,16 +12,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@sparkjsdev/spark": "^2.1.0",
     "framer-motion": "^11.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.12.0",
-    "react-router-dom": "^7.18.1",
-    "three": "^0.185.1"
+    "react-router-dom": "^7.18.1"
   },
   "devDependencies": {
-    "@adobe/spz": "^0.2.2",
     "@vitejs/plugin-react-swc": "^3.5.0",
     "autoprefixer": "^10.4.20",
     "postcss": "^8.4.41",

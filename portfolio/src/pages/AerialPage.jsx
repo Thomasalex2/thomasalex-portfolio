@@ -6,7 +6,6 @@ import ScrollProgress from '../components/ScrollProgress.jsx'
 import AerialNavbar from '../components/aerial/AerialNavbar.jsx'
 import AerialHero from '../components/aerial/AerialHero.jsx'
 import AerialCapture from '../components/aerial/AerialCapture.jsx'
-// import AerialShowreel from '../components/aerial/AerialShowreel.jsx' // hero video covers this for now
 import Aerial3D from '../components/aerial/Aerial3D.jsx'
 import AerialDeliverables from '../components/aerial/AerialDeliverables.jsx'
 import AerialContact from '../components/aerial/AerialContact.jsx'
@@ -17,7 +16,7 @@ const AerialPage = () => {
     const previousTitle = document.title
     document.title = aerial.meta.title
 
-    let descriptionTag = document.querySelector('meta[name="description"]')
+    const descriptionTag = document.querySelector('meta[name="description"]')
     const previousDescription = descriptionTag?.getAttribute('content') || ''
     if (descriptionTag) {
       descriptionTag.setAttribute('content', aerial.meta.description)
@@ -43,7 +42,6 @@ const AerialPage = () => {
           <main className="overflow-x-hidden">
             <AerialHero />
             <AerialCapture />
-            {/* <AerialShowreel /> */}
             <Aerial3D />
             <AerialDeliverables />
             <AerialContact />

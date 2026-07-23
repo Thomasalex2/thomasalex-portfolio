@@ -5,8 +5,8 @@ Do **not** commit raw multi-hundred-MB `.ply` files into this repo.
 ## Recommended workflow
 
 1. Open your Gaussian Splat `.ply` in [SuperSplat](https://playcanvas.com/supersplat/editor) (or Spark’s compress tooling).
-2. Export a compressed web format — prefer **`.spz`** or compressed PLY.
-3. Aim for roughly **&lt; 30–50 MB** for a portfolio demo. Larger scenes should be hosted on a CDN (Cloudflare R2, Bunny, S3, etc.).
+2. Export a compressed web format: prefer **`.spz`** or compressed PLY.
+3. Aim for roughly **&lt; 30-50 MB** for a portfolio demo. Larger scenes should be hosted on a CDN (Cloudflare R2, Bunny, S3, etc.).
 4. Place the file here, e.g. `public/splats/your-scene.spz`.
 5. Update `aerial.splat.url` in [`src/data/content.js`](../../src/data/content.js):
 

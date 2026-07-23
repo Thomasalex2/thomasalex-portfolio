@@ -2,6 +2,7 @@
 module.exports = {
   content: [
     './index.html',
+    './aerial.html',
     './src/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
@@ -21,5 +22,3 @@ module.exports = {
   },
   plugins: [],
 }
-
-

@@ -1,37 +1,16 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { motion } from 'framer-motion'
 import { projects } from '../data/content.js'
 import { HiOutlineExternalLink } from 'react-icons/hi'
 
-const MotionLink = motion(Link)
-const MotionA = motion.a
-const MotionDiv = motion.div
+const ProjectCard = ({ project, hasLink, isInternal }) => {
+  const className = `group h-full flex flex-col overflow-hidden rounded-lg border hairline surface-soft ${
+    hasLink ? 'cursor-pointer hover:border-forest/40 transition-colors' : ''
+  }`
 
-const ProjectCard = ({ project, hasLink, isInternal, Component }) => {
-  const linkProps = hasLink
-    ? isInternal
-      ? { to: project.link }
-      : {
-          href: project.link,
-          target: '_blank',
-          rel: 'noreferrer noopener',
-        }
-    : {}
-
-  return (
-    <Component
-      {...linkProps}
-      className={`card overflow-hidden group h-full flex flex-col ${hasLink ? 'cursor-pointer' : ''}`}
-      {...(hasLink && {
-        whileHover: {
-          scale: 1.02,
-          y: -4,
-          transition: { duration: 0.2 },
-        },
-      })}
-    >
-      <div className="h-32 sm:h-40 bg-white/5 overflow-hidden">
+  const body = (
+    <>
+      <div className="h-36 sm:h-40 overflow-hidden surface-elevated">
         <img
           src={project.image}
           alt={project.title}
@@ -39,20 +18,20 @@ const ProjectCard = ({ project, hasLink, isInternal, Component }) => {
         />
       </div>
       <div className="p-4 sm:p-5 flex-1 flex flex-col">
-        <div className="flex items-start justify-between gap-2 sm:gap-3 mb-2">
-          <h3 className="font-semibold text-sm sm:text-base">{project.title}</h3>
+        <div className="flex items-start justify-between gap-2 mb-2">
+          <h3 className="font-heading font-semibold text-sm sm:text-base ink">{project.title}</h3>
           {hasLink && (
-            <HiOutlineExternalLink className="text-white/60 group-hover:text-forest-light transition-colors flex-shrink-0" />
+            <HiOutlineExternalLink className="ink-faint group-hover:text-forest-light transition-colors flex-shrink-0" />
           )}
         </div>
-        <p className="text-xs sm:text-sm text-white/80 mb-3 flex-1">{project.description}</p>
+        <p className="text-sm ink-muted mb-3 flex-1">{project.description}</p>
 
         {project.techStack && (
-          <div className="flex flex-wrap gap-1 mb-2">
-            {project.techStack.map((tech, index) => (
+          <div className="flex flex-wrap gap-1 mb-3">
+            {project.techStack.map((tech) => (
               <span
-                key={index}
-                className="px-2 py-1 text-xs bg-forest/20 text-forest-light rounded-full border border-forest/30"
+                key={tech}
+                className="px-2 py-0.5 text-xs text-forest-light border border-forest/30 rounded"
               >
                 {tech}
               </span>
@@ -60,33 +39,46 @@ const ProjectCard = ({ project, hasLink, isInternal, Component }) => {
           </div>
         )}
 
-        <div className="flex items-center justify-between text-xs text-white/60 mt-auto pt-2 border-t border-white/10">
-          <span className="capitalize">{project.category}</span>
-          <span className="px-2 py-1 bg-white/10 rounded-full">{project.difficulty}</span>
+        <div className="flex items-center justify-between text-xs ink-faint mt-auto pt-2 border-t hairline">
+          <span>{project.category}</span>
+          <span>{project.difficulty}</span>
         </div>
       </div>
-    </Component>
+    </>
+  )
+
+  if (!hasLink) return <div className={className}>{body}</div>
+  if (isInternal) {
+    return (
+      <Link to={project.link} className={className}>
+        {body}
+      </Link>
+    )
+  }
+  return (
+    <a href={project.link} target="_blank" rel="noreferrer noopener" className={className}>
+      {body}
+    </a>
   )
 }
 
 const Projects = () => {
   return (
-    <section id="projects" className="section">
+    <section id="projects" className="section border-t hairline-soft">
       <div className="container-custom">
-        <h2 className="font-heading text-2xl md:text-3xl font-bold">Personal Projects</h2>
-        <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+        <h2 className="font-heading text-2xl md:text-3xl font-bold ink">Personal Projects</h2>
+        <p className="mt-3 ink-muted max-w-2xl">Selected work across hardware, software, and aerial capture.</p>
+
+        <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {projects.map((project) => {
             const hasLink = project.link && project.link !== '_blank'
             const isInternal = hasLink && project.link.startsWith('/')
-            const Component = !hasLink ? MotionDiv : isInternal ? MotionLink : MotionA
-
             return (
               <ProjectCard
                 key={project.title}
                 project={project}
                 hasLink={hasLink}
                 isInternal={isInternal}
-                Component={Component}
               />
             )
           })}
