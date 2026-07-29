@@ -67,6 +67,11 @@ body,
   height: 100%;
 }
 
+html {
+  /* Sticky nav is h-16; keep section titles clear of the bar on hash scroll */
+  scroll-padding-top: 1rem;
+}
+
 body {
   background-color: var(--surface);
   color: var(--ink);
@@ -242,7 +247,7 @@ html.light #aerial-top .btn-secondary:hover {
 }
 
 .section {
-  @apply py-8 sm:py-10 md:py-12;
+  @apply py-8 sm:py-10 md:py-12 scroll-mt-20;
 }
 
 .btn {
