@@ -3,11 +3,15 @@ import { Link } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { HiMenu, HiX } from 'react-icons/hi'
 import ThemeToggle from '../ThemeToggle.jsx'
+import { aerialReviews } from '../../data/aerialReviews.js'
 
 const links = [
   { label: 'Capture', href: '#aerial-capture' },
   { label: '3D Capture', href: '#aerial-3d' },
   { label: 'Deliverables', href: '#aerial-deliverables' },
+  ...(aerialReviews.items?.length
+    ? [{ label: 'Reviews', href: '#aerial-reviews' }]
+    : []),
   { label: 'Contact', href: '#aerial-contact' },
 ]
 
