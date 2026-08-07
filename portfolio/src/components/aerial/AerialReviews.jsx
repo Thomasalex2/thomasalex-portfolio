@@ -24,13 +24,21 @@ const AerialReviews = () => {
   const [canScroll, setCanScroll] = useState(false)
   const [hovering, setHovering] = useState(false)
   const [reduceMotion, setReduceMotion] = useState(false)
+  const [finePointer, setFinePointer] = useState(false)
 
   useEffect(() => {
-    const mq = window.matchMedia('(prefers-reduced-motion: reduce)')
-    const update = () => setReduceMotion(mq.matches)
-    update()
-    mq.addEventListener('change', update)
-    return () => mq.removeEventListener('change', update)
+    const motionMq = window.matchMedia('(prefers-reduced-motion: reduce)')
+    const pointerMq = window.matchMedia('(hover: hover) and (pointer: fine)')
+    const updateMotion = () => setReduceMotion(motionMq.matches)
+    const updatePointer = () => setFinePointer(pointerMq.matches)
+    updateMotion()
+    updatePointer()
+    motionMq.addEventListener('change', updateMotion)
+    pointerMq.addEventListener('change', updatePointer)
+    return () => {
+      motionMq.removeEventListener('change', updateMotion)
+      pointerMq.removeEventListener('change', updatePointer)
+    }
   }, [])
 
   useEffect(() => {
@@ -51,8 +59,9 @@ const AerialReviews = () => {
     }
   }, [items])
 
+  // Auto-scroll only for mouse hover, never while touch-dragging
   useEffect(() => {
-    if (!hovering || !canScroll || reduceMotion) return
+    if (!hovering || !canScroll || reduceMotion || !finePointer) return
     const el = trackRef.current
     if (!el) return
 
@@ -67,7 +76,7 @@ const AerialReviews = () => {
 
     rafId = requestAnimationFrame(step)
     return () => cancelAnimationFrame(rafId)
-  }, [hovering, canScroll, reduceMotion])
+  }, [hovering, canScroll, reduceMotion, finePointer])
 
   if (!items?.length) return null
 
@@ -91,22 +100,27 @@ const AerialReviews = () => {
 
         <div
           className="mt-6"
-          onMouseEnter={() => setHovering(true)}
+          onMouseEnter={() => {
+            if (finePointer) setHovering(true)
+          }}
           onMouseLeave={() => setHovering(false)}
         >
           <div
             ref={trackRef}
-            className="flex gap-4 overflow-x-auto pb-1 scroll-smooth [scrollbar-width:thin]"
+            className="flex gap-4 overflow-x-auto overscroll-x-contain pb-1 [scrollbar-width:thin] [-webkit-overflow-scrolling:touch]"
             style={{
               scrollSnapType: canScroll ? 'x proximity' : undefined,
             }}
             tabIndex={canScroll ? 0 : undefined}
             aria-label="Client reviews"
+            onPointerDown={() => setHovering(false)}
+            onTouchStart={() => setHovering(false)}
+            onWheel={() => setHovering(false)}
           >
             {items.map((item, index) => (
               <article
                 key={`${item.name}-${item.date || item.location}-${index}`}
-                className="shrink-0 w-[min(100%,22rem)] sm:w-[24rem] p-5 border-l-2 border-forest/60 surface-soft"
+                className="shrink-0 w-[min(85%,22rem)] sm:w-[24rem] p-5 border-l-2 border-forest/60 surface-soft"
                 style={{ scrollSnapAlign: 'start' }}
               >
                 <div className="flex items-center justify-between gap-3">
@@ -123,8 +137,10 @@ const AerialReviews = () => {
               </article>
             ))}
           </div>
-          {canScroll && !reduceMotion ? (
-            <p className="mt-2 text-xs ink-ghost">Hover to scroll</p>
+          {canScroll ? (
+            <p className="mt-2 text-xs ink-ghost">
+              {finePointer && !reduceMotion ? 'Hover to scroll' : 'Swipe for more'}
+            </p>
           ) : null}
         </div>
       </div>
