@@ -41,6 +41,18 @@ const AerialHero = () => {
         </h1>
         <p className="mt-4 on-media text-base sm:text-lg max-w-xl">{hero.subcopy}</p>
         <p className="mt-2 text-sm on-media-muted">{hero.location}</p>
+        {hero.credentials?.length > 0 && (
+          <ul className="mt-4 flex flex-wrap gap-2">
+            {hero.credentials.map((item) => (
+              <li
+                key={item}
+                className="text-xs sm:text-sm px-3 py-1 rounded-full border border-white/25 on-media-muted"
+              >
+                {item}
+              </li>
+            ))}
+          </ul>
+        )}
         <div className="mt-6 flex flex-wrap gap-3">
           <a href={hero.ctaPrimary.href} className="btn btn-primary">
             {hero.ctaPrimary.label}

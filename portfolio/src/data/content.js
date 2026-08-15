@@ -10,6 +10,7 @@ export const nav = [
   { label: 'Experience', href: '#experience' },
   { label: 'Services', href: '#services' },
   { label: 'Projects', href: '#projects' },
+  { label: 'Aerial', href: '/aerial' },
   { label: 'Contact', href: '#contact' },
   { label: 'View CV', href: site.resumeUrl, external: true },
 ]
@@ -143,7 +144,7 @@ export const services = [
     id: 'aerial',
     title: 'Aerial Imaging & 3D Capture',
     description:
-      'Drone photography, inspections, and interactive 3D models captured from aerial footage.',
+      'EU and US licensed drone photography across Ireland: inspections, surveying, planning, and 3D capture.',
     href: '/aerial',
     inquiryType: 'Aerial',
     cta: 'View aerial work',
@@ -154,7 +155,7 @@ export const projects = [
   {
     title: 'Aerial Imaging & 3D Capture',
     description:
-      'Drone photography, inspections, and interactive 3D models captured from aerial footage.',
+      'Licensed drone photography across Ireland: inspections, surveying, planning, and 3D capture.',
     link: '/aerial',
     image: '/images/aerial/aerial-cover.jpg',
     techStack: ['Drone', 'Photogrammetry', '3D Capture', '3D Modelling'],
@@ -208,22 +209,23 @@ export const contact = {
 
 export const aerial = {
   meta: {
-    title: 'Aerial Photography & 3D Capture | Thomas Alex | Galway, Ireland',
+    title: 'Licensed Drone Photographer Ireland | Aerial Photography & 3D Capture',
     description:
-      'Drone aerial photography, property and roof inspections, construction progress, and interactive 3D models from aerial capture. Based in Galway, Ireland.',
+      'EU and US licensed drone photographer available across Ireland. Aerial photos and video for property, surveying, planning permission, investigations, court documentation, inspections, and 3D site capture. Request a shoot — reply within 24 hours.',
   },
   hero: {
     brand: 'Aerial by Thomas Alex',
-    headline: 'Aerial photography, inspections & 3D capture',
+    headline: 'Licensed drone photography across Ireland',
     subcopy:
-      'Property, construction, and inspection captures, plus photorealistic 3D models rebuilt from the same flight.',
+      'Aerial stills, video, and 3D capture for property, construction, surveying, planning, investigations, and inspections. EU and US licensed.',
     // Still used as poster / fallback while the video loads (and if videoSrc is empty)
     coverImage: '/images/aerial/aerial-cover.jpg',
     // Drop a short muted loop here, e.g. '/videos/aerial/galway-hero.mp4' (10-20s, H.264, <15MB ideal)
     videoSrc: '/videos/aerial/galway-hero.mp4',
     ctaPrimary: { label: 'Request a shoot', href: '#aerial-contact' },
-    ctaSecondary: { label: '3D capture', href: '#aerial-3d' },
-    location: 'Galway, Ireland & surrounding areas',
+    ctaSecondary: { label: 'See use cases', href: '#aerial-use-cases' },
+    location: 'Available across Ireland',
+    credentials: ['EU licensed (EASA)', 'US licensed (FAA)', 'Nationwide coverage'],
   },
   capture: {
     title: 'What I capture',
@@ -233,24 +235,111 @@ export const aerial = {
         title: 'Property & estates',
         description: 'Marketing-ready overview shots and site context for listings and portfolios.',
         image: '/images/aerial/gallery-property.jpg',
+        imageAlt: 'Aerial drone photograph of a property and estate in Ireland',
       },
       {
         title: 'Construction progress',
         description: 'Repeatable progress documentation for stakeholders and project records.',
         image: '/images/aerial/gallery-construction.jpg',
+        imageAlt: 'Aerial construction progress photography from a drone in Ireland',
       },
       {
         title: 'Roof & exterior inspection',
         description: 'Hard-to-reach views that help spot issues without scaffolding on day one.',
         image: '/images/aerial/gallery-roof.jpg',
+        imageAlt: 'Drone roof and exterior inspection still of a building in Ireland',
       },
       {
         title: 'Events & landscapes',
         description: 'Cinematic aerials for venues, campuses, and scenic locations.',
         image: '/images/aerial/gallery-landscape.jpg',
+        imageAlt: 'Aerial landscape and venue photography captured by drone in Ireland',
       },
     ],
   },
+  useCases: {
+    title: 'Who this is for',
+    subtitle:
+      'If you need a clear aerial record of a site anywhere in Ireland, I can usually fly it. Typical jobs include:',
+    items: [
+      {
+        title: 'Surveying & site mapping',
+        description:
+          'Overview stills and 3D context for surveyors, engineers, and landowners who need the full site in one pass.',
+      },
+      {
+        title: 'Planning permission',
+        description:
+          'Location context, neighbouring land, access, and site photographs to support planning applications and reports.',
+      },
+      {
+        title: 'Investigation',
+        description:
+          'Independent aerial documentation of a site, boundary, or incident area when a ground-only view is not enough.',
+      },
+      {
+        title: 'Photos for court',
+        description:
+          'Clear, dated aerial stills for solicitors and clients who need a visual record to support a case or statement.',
+      },
+      {
+        title: 'Insurance & claims',
+        description:
+          'Roof, storm, and property condition packs that show damage or state of repair without waiting on scaffolding.',
+      },
+      {
+        title: 'Construction & development',
+        description:
+          'Progress photography and stakeholder updates for builders, architects, and project managers.',
+      },
+    ],
+  },
+  faq: {
+    title: 'Questions before you book',
+    items: [
+      {
+        question: 'Do you fly across all of Ireland?',
+        answer:
+          'Yes. I take jobs nationwide, not only in Galway. Share the site location and timing and I will confirm availability and travel.',
+      },
+      {
+        question: 'Are you licensed to fly a drone?',
+        answer:
+          'Yes. I hold both EU (EASA) and US (FAA) drone licences, and operate within the relevant rules for each job.',
+      },
+      {
+        question: 'Can you add insurance for the day?',
+        answer:
+          'Yes. Day-cover insurance can be added for the shoot at a small extra cost. Request it separately when you enquire and I will include it in the quote.',
+      },
+      {
+        question: 'Can you capture photos for planning permission or court?',
+        answer:
+          'Yes. I regularly produce clear, dated aerial stills for planning packs, investigations, and supporting documentation. Tell me the brief and any viewpoints you need.',
+      },
+      {
+        question: 'How do I request a shoot?',
+        answer:
+          'Use the form on this page with the site location, timing, and what you need delivered. You can also email, call, or WhatsApp. I usually reply within 24 hours with availability and a quote.',
+      },
+      {
+        question: 'What do you deliver?',
+        answer:
+          'Edited high-resolution stills, stabilised video, annotated inspection packs, and optional photorealistic 3D models from the same flight. Quotes are custom to the site and deliverables.',
+      },
+    ],
+  },
+  jobTypes: [
+    'Property / marketing',
+    'Surveying',
+    'Planning permission',
+    'Investigation',
+    'Photos for court',
+    'Insurance / inspection',
+    'Construction progress',
+    '3D capture',
+    'Other',
+  ],
   showreel: {
     title: 'Showreel',
     subtitle: 'A short look at flight footage and deliverable style.',
@@ -269,9 +358,9 @@ export const aerial = {
     ctaLabel: 'Ask about 3D capture',
     useCases: [
       'Property marketing and remote walkthroughs',
-      'Construction progress archives for stakeholders',
+      'Surveying, planning, and investigation context',
       'Roof and exterior context without repeat site visits',
-      'Insurance, survey, and inspection support packs',
+      'Insurance, court, and inspection support packs',
     ],
     benefits: [
       {
@@ -310,7 +399,11 @@ export const aerial = {
     title: 'Request a shoot',
     subtitle: 'Tell me the site, timing, and what you need delivered. I usually reply within 24 hours.',
     message:
-      'Contact for aerial photography, an inspection pass, or a 3D model of a site. Send a few details and I will follow up with availability and a quote.',
+      'Available across Ireland. Send the site location, job type, and what you need delivered — I usually reply within 24 hours with availability and a quote.',
+    // Aerial page only — not shown on the engineering site. Leave '' to hide.
+    // Example: '+353 86 123 4567'
+    phone: '+353 899766357',
+    whatsapp: true,
   },
 }
 

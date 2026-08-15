@@ -250,6 +250,13 @@ html.light #aerial-top .btn-secondary:hover {
   @apply py-8 sm:py-10 md:py-12 scroll-mt-20;
 }
 
+details > summary {
+  list-style: none;
+}
+details > summary::-webkit-details-marker {
+  display: none;
+}
+
 .btn {
   @apply inline-flex items-center justify-center gap-2 rounded-md px-5 py-3 font-medium transition-colors duration-150;
 }

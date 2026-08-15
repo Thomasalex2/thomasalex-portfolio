@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://notreallythomas.com/aerial</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://notreallythomas.com/images/aerial/og-landscape.jpg</image:loc>
+      <image:title>Licensed aerial photography across Ireland</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://notreallythomas.com/images/aerial/gallery-property.jpg</image:loc>
+      <image:title>Aerial property photography Ireland</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://notreallythomas.com/images/aerial/gallery-construction.jpg</image:loc>
+      <image:title>Aerial construction progress photography Ireland</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://notreallythomas.com/images/aerial/gallery-roof.jpg</image:loc>
+      <image:title>Drone roof inspection Ireland</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://notreallythomas.com/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+</urlset>
