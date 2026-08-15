@@ -44,6 +44,12 @@
     Content-Type = "text/plain; charset=utf-8"
     Cache-Control = "public, max-age=3600"
 
+[[headers]]
+  for = "/google03caf8141bccc0a2.html"
+  [headers.values]
+    Content-Type = "text/html; charset=utf-8"
+    Cache-Control = "no-cache"
+
 # Handle SPA routing - but NOT for assets
 [[redirects]]
   from = "/assets/*"
@@ -52,6 +58,11 @@
   force = true
 
 # Serve aerial-specific HTML (meta/OG tags) for crawlers and visitors
+[[redirects]]
+  from = "/google03caf8141bccc0a2.html"
+  to = "/google03caf8141bccc0a2.html"
+  status = 200
+
 [[redirects]]
   from = "/aerial"
   to = "/aerial.html"
