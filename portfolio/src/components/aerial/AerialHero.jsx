@@ -1,10 +1,25 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { aerial } from '../../data/content.js'
 
 const AerialHero = () => {
   const { hero } = aerial
   const cover = hero.coverImage || '/images/aerial/aerial-cover.jpg'
   const videoSrc = hero.videoSrc || ''
+  const [loadVideo, setLoadVideo] = useState(false)
+
+  useEffect(() => {
+    if (!videoSrc) return
+    if (navigator.webdriver) return
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+
+    const enable = () => setLoadVideo(true)
+    if ('requestIdleCallback' in window) {
+      const id = requestIdleCallback(enable, { timeout: 2500 })
+      return () => cancelIdleCallback(id)
+    }
+    const timer = setTimeout(enable, 1200)
+    return () => clearTimeout(timer)
+  }, [videoSrc])
 
   return (
     <section id="aerial-top" className="relative min-h-[70vh] sm:min-h-[75vh] flex items-center overflow-hidden">
@@ -14,14 +29,14 @@ const AerialHero = () => {
         aria-hidden="true"
       />
 
-      {videoSrc && (
+      {loadVideo && (
         <video
           className="absolute inset-0 w-full h-full object-cover"
           autoPlay
           muted
           loop
           playsInline
-          preload="metadata"
+          preload="none"
           poster={cover}
           aria-hidden="true"
         >

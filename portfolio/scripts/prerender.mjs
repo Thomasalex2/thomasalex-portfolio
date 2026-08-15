@@ -42,6 +42,7 @@ function startServer() {
 
 async function prerenderRoute(browser, route) {
   const page = await browser.newPage()
+  await page.emulateMediaFeatures([{ name: 'prefers-color-scheme', value: 'dark' }])
   await page.setViewport({ width: 1280, height: 720 })
 
   // Block fonts/analytics so CI builds stay fast and offline-friendly

@@ -1,6 +1,3 @@
-# Search Console ownership file must not hit the SPA fallback
-/google03caf8141bccc0a2.html  /google03caf8141bccc0a2.html  200
-
 # Aerial page gets its own HTML entry (correct OG / link-preview meta)
 /aerial    /aerial.html   200
 /aerial/   /aerial.html   200
