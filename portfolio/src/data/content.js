@@ -404,6 +404,7 @@ export const aerial = {
     // Example: '+353 86 123 4567'
     phone: '+353 899766357',
     whatsapp: true,
+    email: 'aerial@notreallythomas.com',
   },
 }
 

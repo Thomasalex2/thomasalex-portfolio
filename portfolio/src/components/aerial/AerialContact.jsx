@@ -47,7 +47,8 @@ const AerialContact = () => {
       .catch(() => setSent(true))
   }
 
-  const mailtoHref = `mailto:${contact.email}?subject=${encodeURIComponent('Aerial shoot enquiry')}`
+  const aerialEmail = aerialContact.email || contact.email
+  const mailtoHref = `mailto:${aerialEmail}?subject=${encodeURIComponent('Aerial shoot enquiry')}`
   const phone = aerialContact.phone?.trim()
   const phoneHref = phone ? `tel:${phone.replace(/[^\d+]/g, '')}` : ''
   const whatsappHref =
@@ -186,7 +187,7 @@ const AerialContact = () => {
               <li className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
                 <span className="ink-faint w-20 shrink-0">Email</span>
                 <a href={mailtoHref} className="text-forest-light hover:underline break-all">
-                  {contact.email}
+                  {aerialEmail}
                 </a>
               </li>
               {phoneHref ? (

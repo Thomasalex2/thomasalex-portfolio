@@ -6,6 +6,7 @@ const Footer = () => {
   const year = new Date().getFullYear()
   const isAerial = useLocation().pathname.startsWith('/aerial')
   const phone = aerial.contact?.phone?.trim()
+  const aerialEmail = aerial.contact?.email || contact.email
 
   return (
     <footer className="border-t hairline py-8 mt-8">
@@ -14,8 +15,8 @@ const Footer = () => {
           <>
             <p>EU &amp; US licensed drone photography · Available across Ireland</p>
             <p>
-              <a href={`mailto:${contact.email}`} className="text-forest-light hover:underline">
-                {contact.email}
+              <a href={`mailto:${aerialEmail}`} className="text-forest-light hover:underline">
+                {aerialEmail}
               </a>
               {phone ? (
                 <>
