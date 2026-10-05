@@ -273,14 +273,14 @@ export const aerial = {
           'Location context, neighbouring land, access, and site photographs to support planning applications and reports.',
       },
       {
-        title: 'Investigation',
+        title: 'Legal & investigations',
         description:
-          'Independent aerial documentation of a site, boundary, or incident area when a ground-only view is not enough.',
+          'Dated aerial stills for solicitors, court packs, boundary disputes, and incident sites when a ground view is not enough.',
       },
       {
-        title: 'Photos for court',
+        title: 'Hotels & venues',
         description:
-          'Clear, dated aerial stills for solicitors and clients who need a visual record to support a case or statement.',
+          'Showreel clips and stills for hotels, lodges, and venues: the building, the setting, and the details guests actually book for.',
       },
       {
         title: 'Insurance & claims',
@@ -333,8 +333,8 @@ export const aerial = {
     'Property / marketing',
     'Surveying',
     'Planning permission',
-    'Investigation',
-    'Photos for court',
+    'Legal / investigation',
+    'Hotels / venues',
     'Insurance / inspection',
     'Construction progress',
     '3D capture',
@@ -379,20 +379,6 @@ export const aerial = {
         title: 'Built from the same flight',
         description: 'Often captured alongside your photography or inspection pass, so one site visit covers more.',
       },
-    ],
-  },
-  deliverables: {
-    title: 'Deliverables',
-    subtitle: 'Pick what you need. Custom quotes for every shoot.',
-    items: [
-      { title: 'Still photography', description: 'Edited high-resolution aerial stills ready for web or print.' },
-      { title: 'Video / showreel clips', description: 'Stabilised flight footage and short edited sequences.' },
-      {
-        title: '3D capture & models',
-        description:
-          'Photorealistic 3D reconstruction of the site: stills, exports, or a shareable viewing package on request.',
-      },
-      { title: 'Inspection packs', description: 'Annotated stills highlighting areas of interest on request.' },
     ],
   },
   contact: {

@@ -9,7 +9,6 @@ const links = [
   { label: 'Capture', href: '#aerial-capture' },
   { label: 'Use cases', href: '#aerial-use-cases' },
   { label: '3D Capture', href: '#aerial-3d' },
-  { label: 'Deliverables', href: '#aerial-deliverables' },
   ...(aerialReviews.items?.length
     ? [{ label: 'Reviews', href: '#aerial-reviews' }]
     : []),

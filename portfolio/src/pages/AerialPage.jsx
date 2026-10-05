@@ -8,7 +8,6 @@ import AerialHero from '../components/aerial/AerialHero.jsx'
 import AerialCapture from '../components/aerial/AerialCapture.jsx'
 import AerialUseCases from '../components/aerial/AerialUseCases.jsx'
 import Aerial3D from '../components/aerial/Aerial3D.jsx'
-import AerialDeliverables from '../components/aerial/AerialDeliverables.jsx'
 import AerialReviews from '../components/aerial/AerialReviews.jsx'
 import AerialFaq from '../components/aerial/AerialFaq.jsx'
 import AerialContact from '../components/aerial/AerialContact.jsx'
@@ -47,7 +46,6 @@ const AerialPage = () => {
             <AerialCapture />
             <AerialUseCases />
             <Aerial3D />
-            <AerialDeliverables />
             <AerialReviews />
             <AerialFaq />
             <AerialContact />
